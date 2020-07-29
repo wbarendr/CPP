@@ -6,20 +6,12 @@
 /*   By: Wester <Wester@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/28 20:45:42 by Wester        #+#    #+#                 */
-/*   Updated: 2020/07/29 09:43:57 by Wester        ########   odam.nl         */
+/*   Updated: 2020/07/29 11:16:26 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Human.hpp"
 #include "Brain.hpp"
-
-// int main()
-// {
-//     Brain Bob;
-    
-//     std::cout << Bob.identify() << " . " << Bob.neurons << std::endl;
-// }
-
 
 int main()
 {

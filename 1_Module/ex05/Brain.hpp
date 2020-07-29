@@ -6,7 +6,7 @@
 /*   By: Wester <Wester@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/28 21:43:56 by Wester        #+#    #+#                 */
-/*   Updated: 2020/07/28 21:43:57 by Wester        ########   odam.nl         */
+/*   Updated: 2020/07/29 11:13:01 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ class Brain {
   public:
     int neurons;
     int pathways;
-    std::string address;
-    std::string     identify(void);
+    std::string     address;
+    std::string     identify();
     Brain();
     ~Brain();
 };
