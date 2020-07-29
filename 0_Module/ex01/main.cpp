@@ -6,7 +6,7 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/27 15:03:21 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/07/28 18:17:37 by Wester        ########   odam.nl         */
+/*   Updated: 2020/07/29 16:25:48 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,8 @@ int     main(void)
 	Contact new_contact[8];
 	int amount = 0;
 	int index;
+	int check;
+	std::string input;
 	std::string cmd;
 	while (1)
 	{
@@ -96,12 +98,29 @@ int     main(void)
 					std::cout << "         " << tab + 1 << "|";
 					new_contact[tab].table();
 				}
-				std::cout << "Who is your best friend? "; std::cin >> index;
-				std::cin.ignore();
-				if (index - 1 >= 0 && index - 1 < amount)
-					new_contact[index - 1].print_this();
+				std::cout << "Who is your best friend? "; 
+				std::cin >> input;
+				check = 0;
+				for (unsigned long i = 0; i < input.length(); ++i)
+				{
+					if (isdigit(input[i]) == false)
+					{
+						check = 1;
+						break ;
+					}					
+				}
+				if (check == 0)
+				{
+					std::stringstream change(input);
+					change >> index;
+					if (index - 1 >= 0 && index - 1 < amount)
+						new_contact[index - 1].print_this();
+					else
+						std::cout << "definetly not your best friend!\n";	
+				}
 				else
 					std::cout << "definetly not your best friend!\n";	
+				std::cin.ignore();
 			}
 		}
 		if (cmd ==  "EXIT")
