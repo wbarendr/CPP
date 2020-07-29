@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Brain.cpp                                          :+:    :+:            */
+/*   Weapon.cpp                                         :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: Wester <Wester@student.codam.nl>             +#+                     */
+/*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/07/28 20:54:35 by Wester        #+#    #+#                 */
-/*   Updated: 2020/07/29 13:33:50 by wbarendr      ########   odam.nl         */
+/*   Created: 2020/07/29 11:34:04 by wbarendr      #+#    #+#                 */
+/*   Updated: 2020/07/29 12:24:12 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Brain.hpp"
+#include "Weapon.hpp"
 
-Brain::Brain()
+Weapon::Weapon(std::string kind)
 {
-    std::stringstream buff;
-
-    this->neurons = 200820;
-    this->pathways = 5;
-    buff << this;
-    this->address = buff.str();
+   this->type = kind; 
 };
 
-Brain::~Brain(){};
+Weapon::~Weapon(){};
 
-std::string     Brain::identify(void)
+void    Weapon::setType(std::string kind)
 {
-    return this->address; 
+    this->type = kind;
+}
+
+const std::string& Weapon::getType()
+{
+    return this->type;
 }
