@@ -6,7 +6,7 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/27 15:03:21 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/07/29 16:55:41 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/08/03 12:31:34 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,7 @@ int     main(void)
 					{
 						check = 1;
 						break ;
-					}					
+					}	
 				}
 				if (check == 0)
 				{

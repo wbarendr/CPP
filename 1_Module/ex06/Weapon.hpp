@@ -6,7 +6,7 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/29 11:18:38 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/07/29 12:22:31 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/08/03 11:32:26 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,13 @@
 # include <iostream>
 
 class Weapon {
-  public:  
     std::string type;
+  public:  
     const std::string& getType();
     void setType(std::string kind);
     
+    Weapon();
+    Weapon(const Weapon &other);
     Weapon(std::string kind);
     ~Weapon();
 };
