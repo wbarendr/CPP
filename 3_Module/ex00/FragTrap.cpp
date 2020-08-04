@@ -6,7 +6,7 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/01 11:51:07 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/08/01 14:31:40 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/08/04 16:24:40 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,33 @@ FragTrap::FragTrap(){
 FragTrap::FragTrap(std::string name){
 	Hit_Points = 100;
 	Energy_Points = 100;
+	Max_Hit_Points = 100;
+	Max_Energy_points = 100;
+	Level = 1;
+	Melee_attack_damage = 30;
+	Ranged_attack_damage = 20;
+	Armor_damage_reduction = 5;
 	std::cout << "Constructing FragTrap && naming it" << std::endl;
 	Name = name;
+}
+
+FragTrap::FragTrap(const FragTrap& other){
+	std::cout << "hello copy" << std::endl;
+	*this = other;
+}
+
+FragTrap&	FragTrap::operator=(const FragTrap& overload){
+	std::cout << "hello operator" << std::endl;
+	Hit_Points = overload.Hit_Points;
+	Max_Hit_Points = overload.Max_Hit_Points;
+	Energy_Points = overload.Energy_Points;
+	Max_Energy_points = overload.Max_Energy_points;
+	Level = overload.Level;
+	Name = overload.Name;
+	Melee_attack_damage = overload.Melee_attack_damage;
+	Ranged_attack_damage = overload.Ranged_attack_damage;
+	Armor_damage_reduction = overload.Armor_damage_reduction;
+	return *this;
 }
 
 FragTrap::~FragTrap(){
@@ -42,7 +67,7 @@ void	FragTrap::beRepaired(unsigned int amount){
 		return ;
 	}
 	std::cout << "Being Repaired by " << amount << " points :)" << std::endl;
-	if (Energy_Points + amount > Max_Energy_points){
+	if (Energy_Points + (int)amount > Max_Energy_points){
 		Energy_Points = Max_Energy_points;
 		std::cout << Name << " is in full health!" << std::endl;
 	}
@@ -56,7 +81,7 @@ void 	FragTrap::takeDamage(unsigned int amount){
 		return ;
 	}
 	std::cout << Name << " is under attack!" << std::endl;
-	if (amount <= Armor_damage_reduction){
+	if ((int)amount <= Armor_damage_reduction){
 		std::cout << Name << " blocked the attack" << std::endl;
 		return ;
 	}

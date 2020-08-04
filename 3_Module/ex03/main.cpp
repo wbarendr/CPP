@@ -6,7 +6,7 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/03 14:42:22 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/08/03 17:43:38 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/08/04 14:40:16 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,19 +52,15 @@ int     main(void)
     two.takeDamage(40);
     two.rangedAttack("henk");
 
-    three.ninjaShoeBox("Jean");
-    three.ninjaShoeBox("Jean");
-    three.ninjaShoeBox("Jean");
-    three.ninjaShoeBox("Jean");
+    three.ninjaShoebox(one);
+    three.ninjaShoebox(two);
+    three.ninjaShoebox(three);
     three.rangedAttack("henk"); 
     three.rangedAttack("henk");
     three.beRepaired(50);
     three.meleeAttack("willemijn");
     three.takeDamage(9);
-    three.ninjaShoeBox("Jean");
     three.takeDamage(3);
-    three.ninjaShoeBox("Batskelien");
-    three.ninjaShoeBox("Jean");
     three.takeDamage(40);
     three.rangedAttack("henk");  
     return 0;

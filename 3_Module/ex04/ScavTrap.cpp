@@ -6,7 +6,7 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/03 12:55:59 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/08/03 17:19:00 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/08/04 16:58:34 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,13 @@
 
 ScavTrap::ScavTrap(){
 	std::cout << "Making a Scav" << std::endl;
+	changeMax(50);
+	changeMaxHit(100);
+	changeHit(100);
+	changeEnergy(50);
+	changeArmorReduction(3);
+	Melee_attack_damage = 20;
+    Ranged_attack_damage = 15;
 };
 
 ScavTrap::ScavTrap(std::string name){
@@ -22,8 +29,28 @@ ScavTrap::ScavTrap(std::string name){
 	changeHit(100);
 	changeEnergy(50);
 	changeArmorReduction(3);
+	Melee_attack_damage = 20;
+    Ranged_attack_damage = 15;
+
 	std::cout << "Making a scav & naming it" << std::endl;
 	this->giveName(name);
+};
+
+ScavTrap::ScavTrap(const ScavTrap& other){
+	*this = other;
+}
+
+ScavTrap&	ScavTrap::operator=(const ScavTrap& overload){
+	Hit_Points = overload.Hit_Points;
+	Max_Hit_Points = overload.Max_Hit_Points;
+	Energy_Points = overload.Energy_Points;
+	Max_Energy_points = overload.Max_Energy_points;
+	Level = overload.Level;
+	Name = overload.Name;
+	Melee_attack_damage = overload.Melee_attack_damage;
+	Ranged_attack_damage = overload.Ranged_attack_damage;
+	Armor_damage_reduction = overload.Armor_damage_reduction;
+	return *this;
 };
 
 ScavTrap::~ScavTrap(){

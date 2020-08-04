@@ -6,7 +6,7 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/01 11:43:56 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/08/03 18:29:53 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/08/04 16:10:55 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,12 @@
 #include <string>
 
 class FragTrap : public ClapTrap{
-  protected:
-    const static int Melee_attack_damage = 30;
-    const static int Ranged_attack_damage = 20;
-
   public:
     FragTrap();
     FragTrap(std::string name);
-    ~FragTrap();
+    FragTrap(const FragTrap& other);
+    FragTrap&		operator=(const FragTrap &overload);
+		~FragTrap();
     void rangedAttack(std::string const& target);
     void meleeAttack(std::string const& target);
     void vaulthunter_dot_exe(std::string const& target);

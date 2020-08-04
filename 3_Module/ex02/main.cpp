@@ -6,7 +6,7 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/03 14:42:22 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/08/03 17:13:28 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/08/04 16:48:33 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,9 @@ int     main(void)
     two.takeDamage(3);
     two.challengeNewcomer("Batskelien");
     two.challengeNewcomer("Jean");
+    two.takeDamage(40);
+    two.takeDamage(40);
+    two.takeDamage(40);
     two.takeDamage(40);
     two.rangedAttack("henk");  
     return 0;

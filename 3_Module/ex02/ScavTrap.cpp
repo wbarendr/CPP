@@ -6,24 +6,52 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/03 12:55:59 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/08/03 17:19:00 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/08/04 16:34:46 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
 ScavTrap::ScavTrap(){
+	Hit_Points = 100;
+	Energy_Points = 50;
+	Max_Hit_Points = 100;
+	Max_Energy_points = 50;
+	Level = 1;
+	Melee_attack_damage = 20;
+	Ranged_attack_damage = 15;
+	Armor_damage_reduction = 3;
 	std::cout << "Making a Scav" << std::endl;
 };
 
 ScavTrap::ScavTrap(std::string name){
-	changeMax(50);
-	changeMaxHit(100);
-	changeHit(100);
-	changeEnergy(50);
-	changeArmorReduction(3);
-	std::cout << "Making a scav & naming it" << std::endl;
-	this->giveName(name);
+	Hit_Points = 100;
+	Energy_Points = 50;
+	Max_Hit_Points = 100;
+	Max_Energy_points = 50;
+	Level = 1;
+	Melee_attack_damage = 20;
+	Ranged_attack_damage = 15;
+	Armor_damage_reduction = 3;
+	std::cout << "Constructing ScavTrap && naming it" << std::endl;
+	Name = name;
+}
+
+ScavTrap::ScavTrap(const ScavTrap& other){
+	*this = other;
+}
+
+ScavTrap&	ScavTrap::operator=(const ScavTrap& overload){
+	Hit_Points = overload.Hit_Points;
+	Max_Hit_Points = overload.Max_Hit_Points;
+	Energy_Points = overload.Energy_Points;
+	Max_Energy_points = overload.Max_Energy_points;
+	Level = overload.Level;
+	Name = overload.Name;
+	Melee_attack_damage = overload.Melee_attack_damage;
+	Ranged_attack_damage = overload.Ranged_attack_damage;
+	Armor_damage_reduction = overload.Armor_damage_reduction;
+	return *this;
 };
 
 ScavTrap::~ScavTrap(){

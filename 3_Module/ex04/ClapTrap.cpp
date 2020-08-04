@@ -6,7 +6,7 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/03 15:28:06 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/08/04 13:23:00 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/08/04 16:55:30 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,43 @@ ClapTrap::ClapTrap(){
 	std::cout << "Making a claptrap" << std::endl;
 	Hit_Points = 0;
 	Energy_Points = 0;
+	Max_Hit_Points = 0;
 	Max_Energy_points = 0;
+	Level = 1;
+	Melee_attack_damage = 0;
+	Ranged_attack_damage = 0;
 	Armor_damage_reduction = 0;
 };
 
 ClapTrap::ClapTrap(std::string name){
 	std::cout << "Making a claptrap & naming it" << std::endl;
+	Hit_Points = 0;
+	Energy_Points = 0;
+	Max_Hit_Points = 0;
+	Max_Energy_points = 0;
+	Level = 1;
+	Melee_attack_damage = 0;
+	Ranged_attack_damage = 0;
+	Armor_damage_reduction = 0;
 	Name = name;
 }
+
+ClapTrap::ClapTrap(const ClapTrap& other){
+	*this = other;
+}
+
+ClapTrap&	ClapTrap::operator=(const ClapTrap& overload){
+	Hit_Points = overload.Hit_Points;
+	Max_Hit_Points = overload.Max_Hit_Points;
+	Energy_Points = overload.Energy_Points;
+	Max_Energy_points = overload.Max_Energy_points;
+	Level = overload.Level;
+	Name = overload.Name;
+	Melee_attack_damage = overload.Melee_attack_damage;
+	Ranged_attack_damage = overload.Ranged_attack_damage;
+	Armor_damage_reduction = overload.Armor_damage_reduction;
+	return *this;
+};
 
 ClapTrap::~ClapTrap(){
 	std::cout << "Destroyer of claptrap" << std::endl;
@@ -53,22 +82,21 @@ void 	ClapTrap::takeDamage(unsigned int amount){
 		return ;
 	}
 	std::cout << Name << " says: wooooo, nNooohhh pleas don't hurt me !" << std::endl;
-	if (amount <= Armor_damage_reduction){
+	if ((int)amount <= Armor_damage_reduction){
 		std::cout << Name << " says just kiddin.. blocked joo whimpy ass attack" << std::endl;
 		return ;
 	}
-	changeHit(int(amount - Armor_damage_reduction) * -1);
-	std::cout << "got hit !!!<< " << Hit_Points << std::endl;
+	changeHit((unsigned int)(amount - Armor_damage_reduction) * -1);
 	if (hitPoints() <= 0){
 		std::cout << Name << " was murdered!...." << std::endl;
 		changeHit(0);
 		return ;
-	}
-	std::cout << Name << " was severly beaten by " << (amount - Armor_damage_reduction) << std::endl;
+	} 
+	std::cout << Name << " was severely beaten by " << (amount - Armor_damage_reduction) << std::endl;
 }
 
-void	ClapTrap::changeEnergy(int num){
-	if (Energy_Points + num > (int)Max_Energy_points){
+void	ClapTrap::changeEnergy(unsigned int num){
+	if (Energy_Points + (int)num > Max_Energy_points){
 		Energy_Points = Max_Energy_points;
 		std::cout << Name << " has full Energy!!!" << std::endl;
 	}
@@ -80,12 +108,12 @@ int		ClapTrap::energyPoints(){
 	return Energy_Points; 
 }
 
-void	ClapTrap::changeHit(int num){
+void	ClapTrap::changeHit(unsigned int num){
 	if (num == 0) {
 		Hit_Points = 0;
 		return ;
 	}
-	if (Hit_Points + num > (int)Max_Hit_Points){
+	if (Hit_Points + (int)num > Max_Hit_Points){
 		Hit_Points = Max_Hit_Points;
 		std::cout << Name << " has full Hit!!!" << std::endl;
 	}

@@ -6,7 +6,7 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/03 12:54:48 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/08/03 16:35:53 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/08/04 16:58:45 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,11 @@
 #include <string>
 
 class ScavTrap : public ClapTrap{
-  private:
-    const static int Melee_attack_damage = 20;
-    const static int Ranged_attack_damage = 15;
-
   public:
     ScavTrap();
     ScavTrap(std::string name);
+    ScavTrap(const ScavTrap& other);
+		ScavTrap&		operator=(const ScavTrap &overload);
     ~ScavTrap();
     void rangedAttack(std::string const& target);
     void meleeAttack(std::string const& target);

@@ -6,29 +6,49 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/01 11:51:07 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/08/04 13:20:26 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/08/04 18:12:32 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
 FragTrap::FragTrap(){
-	changeMax(100);
-	changeMaxHit(100);
-	changeHit(100);
-	changeEnergy(100);
-	changeArmorReduction(5);
 	std::cout << "Constructing FragTrap" << std::endl;
+	Hit_Points = 100;
+	Max_Hit_Points = 100;
+	Armor_damage_reduction = 5;
+    Ranged_attack_damage = 20;
 };
 
 FragTrap::FragTrap(std::string name){
+	std::cout << "Constructing FragTrap && naming it" << std::endl;
 	changeMax(100);
 	changeMaxHit(100);
 	changeHit(100);
 	changeEnergy(100);
 	changeArmorReduction(5);
-	std::cout << "Constructing FragTrap && naming it" << std::endl;
+	Melee_attack_damage = 30;
+    Ranged_attack_damage = 20;
 	this->giveName(name);
+}
+
+FragTrap::FragTrap(const FragTrap& other){
+	std::cout << "hello copy" << std::endl;
+	*this = other;
+}
+
+FragTrap&	FragTrap::operator=(const FragTrap& overload){
+	std::cout << "hello operator" << std::endl;
+	Hit_Points = overload.Hit_Points;
+	Max_Hit_Points = overload.Max_Hit_Points;
+	Energy_Points = overload.Energy_Points;
+	Max_Energy_points = overload.Max_Energy_points;
+	Level = overload.Level;
+	Name = overload.Name;
+	Melee_attack_damage = overload.Melee_attack_damage;
+	Ranged_attack_damage = overload.Ranged_attack_damage;
+	Armor_damage_reduction = overload.Armor_damage_reduction;
+	return *this;
 }
 
 unsigned int	FragTrap::get_ranged(){ return Ranged_attack_damage; }
