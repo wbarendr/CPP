@@ -6,7 +6,7 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/03 17:27:07 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/08/03 21:16:58 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/08/04 13:21:23 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,12 +95,9 @@ void	NinjaTrap::ninjaShoeBox(std::string const& target){
         yes = 0;
     }
     num = rand() % 5;
-	std::cout << "checking Ninja: " << energyPoints() << std::endl; 
-
 	if (energyPoints() <= 25){
 		std::cout << this->takeName() << " is low on energy." << std::endl;	
 		return ;
 	}
 	std::cout << this->takeName() << attacks[num] << target << std::endl;
-	changeEnergy(-25);
 }

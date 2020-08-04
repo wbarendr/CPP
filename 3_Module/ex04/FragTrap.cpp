@@ -6,7 +6,7 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/01 11:51:07 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/08/03 21:16:46 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/08/04 13:20:26 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,3 +80,4 @@ void	FragTrap::vaulthunter_dot_exe(std::string const& target){
 	std::cout << this->takeName() << attacks[num] << " of " << target << std::endl;
 	changeEnergy(-25);
 }
+

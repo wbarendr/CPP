@@ -6,7 +6,7 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/03 15:28:06 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/08/03 21:13:00 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/08/04 13:23:00 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,11 +58,12 @@ void 	ClapTrap::takeDamage(unsigned int amount){
 		return ;
 	}
 	changeHit(int(amount - Armor_damage_reduction) * -1);
+	std::cout << "got hit !!!<< " << Hit_Points << std::endl;
 	if (hitPoints() <= 0){
 		std::cout << Name << " was murdered!...." << std::endl;
 		changeHit(0);
 		return ;
-	} 
+	}
 	std::cout << Name << " was severly beaten by " << (amount - Armor_damage_reduction) << std::endl;
 }
 
