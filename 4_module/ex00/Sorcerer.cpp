@@ -6,15 +6,11 @@
 /*   By: Wester <Wester@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/05 17:32:33 by Wester        #+#    #+#                 */
-/*   Updated: 2020/08/05 18:35:55 by Wester        ########   odam.nl         */
+/*   Updated: 2020/08/06 14:29:53 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Sorcerer.hpp"
-
-Sorcerer::Sorcerer(void){
-    std::cout << "the class can't be iniciated like this, it doesn't make any sense!" << std::endl;
-};
 
 Sorcerer::~Sorcerer(){
     std::cout << name << ", " << title << " is dead. Consequences will never be the same!" << std::endl;
@@ -26,13 +22,25 @@ Sorcerer::Sorcerer(std::string _name, std::string _title){
     std::cout << name << ", " << title << ", is born!" << std::endl;
 }
 
-// s
+Sorcerer::Sorcerer(const Sorcerer& other){
+    *this = other;
+}
 
-int     main()
+Sorcerer& Sorcerer::operator=(const Sorcerer& other)
 {
-    Sorcerer *a = new Sorcerer("piet", "viezerik");
-    
-    std::cout << a <<std::endl;
-    delete a;
-    return 0;
+    name = other.name;
+    title = other.title;
+	return *this;
+};
+
+void    Sorcerer::polymorph(Victim const & _vic)const {
+    _vic.getPolymorphed();
+}
+
+std::string  Sorcerer::getTitle()const {
+    return title;
+}
+
+std::string  Sorcerer::getName()const {
+    return name;
 }

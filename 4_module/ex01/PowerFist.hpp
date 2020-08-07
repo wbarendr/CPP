@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Peon.hpp                                           :+:    :+:            */
+/*   PowerFist.hpp                                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/08/06 14:13:23 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/08/06 14:40:17 by wbarendr      ########   odam.nl         */
+/*   Created: 2020/08/07 12:05:42 by wbarendr      #+#    #+#                 */
+/*   Updated: 2020/08/07 13:06:41 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _Peon_HPP_
-# define _Peon_HPP_
+#ifndef _POWERFIST_HPP_
+# define _POWERFIST_HPP_
 
 # include <iostream>
 # include <string>
-# include "Victim.hpp"
+# include "AWeapon.hpp"
 
-class Peon : public virtual Victim{
+class PowerFist : public virtual AWeapon{
   public:
-    ~Peon();
-    Peon(std::string _name);
-    Peon(const Peon& other);
-    Peon& operator=(const Peon& other);
-    
-    void  getPolymorphed()const;
+	PowerFist();
+	PowerFist(std::string const& name, int apcost, int damage);
+	~PowerFist();
+	PowerFist(const PowerFist& other);
+	PowerFist& 	operator=(const PowerFist& other);
+	void 			attack() const;
 };
 
 #endif

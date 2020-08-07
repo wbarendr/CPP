@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Peon.hpp                                           :+:    :+:            */
+/*   RadScorpion.hpp                                    :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/08/06 14:13:23 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/08/06 14:40:17 by wbarendr      ########   odam.nl         */
+/*   Created: 2020/08/07 12:43:35 by wbarendr      #+#    #+#                 */
+/*   Updated: 2020/08/07 12:46:18 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _Peon_HPP_
-# define _Peon_HPP_
+#ifndef _RADSCORPION_HPP_
+# define _RADSCORPION_HPP_
 
 # include <iostream>
 # include <string>
-# include "Victim.hpp"
+# include "Enemy.hpp"
 
-class Peon : public virtual Victim{
+class RadScorpion : public virtual Enemy{
   public:
-    ~Peon();
-    Peon(std::string _name);
-    Peon(const Peon& other);
-    Peon& operator=(const Peon& other);
-    
-    void  getPolymorphed()const;
+	RadScorpion(std::string const& type, int hp);
+	~RadScorpion();
+	RadScorpion(const RadScorpion& other);
+	RadScorpion& 	operator=(const RadScorpion& other);
 };
 
 #endif

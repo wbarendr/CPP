@@ -1,30 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Peon.hpp                                           :+:    :+:            */
+/*   Enemy.hpp                                          :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/08/06 14:13:23 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/08/06 14:40:17 by wbarendr      ########   odam.nl         */
+/*   Created: 2020/08/07 12:09:26 by wbarendr      #+#    #+#                 */
+/*   Updated: 2020/08/07 13:32:22 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _Peon_HPP_
-# define _Peon_HPP_
+#ifndef _ENEMY_HPP_
+# define _ENEMY_HPP_
 
 # include <iostream>
 # include <string>
-# include "Victim.hpp"
+# include "AWeapon.hpp"
 
-class Peon : public virtual Victim{
+class Enemy
+{
+  private:
+	int _hp;
+	std::string _type;
   public:
-    ~Peon();
-    Peon(std::string _name);
-    Peon(const Peon& other);
-    Peon& operator=(const Peon& other);
-    
-    void  getPolymorphed()const;
+	Enemy();
+	Enemy(const Enemy& other);
+	Enemy(int hp, std::string const& type);
+	Enemy&	operator=(const Enemy& other);
+	~Enemy();
+	std::string 	getType() const;
+	int 			getHP() const;
+	void			setHP(int hp);
+	void			setType(std::string type);
+	virtual void 	takeDamage(int);
 };
 
 #endif
