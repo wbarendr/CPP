@@ -6,13 +6,13 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/07 12:42:41 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/08/07 12:46:26 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/08/07 15:00:50 by Wester        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Radscorpion.hpp"
+#include "RadScorpion.hpp"
 
-RadScorpion::RadScorpion(std::string const& type, int hp):
+RadScorpion::RadScorpion():
    Enemy(80, "RadScorpion"){
        std::cout <<  "* click click click *" << std::endl;
    };
@@ -26,7 +26,7 @@ RadScorpion::RadScorpion(const RadScorpion& other){
 };
 
 RadScorpion&    RadScorpion::operator=(const RadScorpion& other){
-	setHP(other.getHP);
-	setType(other.getType);
+	setHP(other.getHP());
+	setType(other.getType());
     return *this;
 }

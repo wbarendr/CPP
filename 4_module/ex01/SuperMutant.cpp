@@ -6,13 +6,13 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/07 12:26:27 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/08/07 12:39:39 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/08/07 15:00:13 by Wester        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "SuperMutant.hpp"
 
-SuperMutant::SuperMutant(std::string const& type, int hp):
+SuperMutant::SuperMutant():
    Enemy(170, "Super Mutant"){
        std::cout << "Gaaah. Me want smash heads!" << std::endl;
    };
@@ -26,8 +26,8 @@ SuperMutant::SuperMutant(const SuperMutant& other){
 };
 
 SuperMutant&    SuperMutant::operator=(const SuperMutant& other){
-	setHP(other.getHP);
-	setType(other.getType);
+	setHP(other.getHP());
+	setType(other.getType());
     return *this;
 }
 
