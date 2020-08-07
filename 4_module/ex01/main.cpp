@@ -6,7 +6,7 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/07 13:34:42 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/08/07 13:55:24 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/08/07 18:04:22 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 
 std::ostream& operator<<(std::ostream& stream, const Character& other)
 {
-    if (other.ifWeapon())
-	    stream << other.getName() << " has " << other.getAP() << " AP and wields a " << other.getWeapon().getName() <<  std::endl;
+    if (other.getWeapon() != NULL)
+	    stream << other.getName() << " has " << other.getAP() << " AP and wields a " << other.getWeapon()->getName() <<  std::endl;
     else 
         stream << other.getName() << " has " << other.getAP() << " AP and is unarmed" << std::endl;
 	return stream;

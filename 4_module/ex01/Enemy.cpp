@@ -6,7 +6,7 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/07 12:12:40 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/08/07 12:45:59 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/08/07 17:13:45 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ Enemy::Enemy(const Enemy& other){
 Enemy&    Enemy::operator=(const Enemy& other){
 	_hp = other._hp;
 	_type = other._type;
+	return *this;
 }
 
 void    Enemy::takeDamage(int damage){

@@ -6,7 +6,7 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/07 12:46:46 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/08/07 13:52:22 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/08/07 17:55:36 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,15 @@ class Character
     
 public:
     Character(std::string const& name);
+    Character(const Character& other);
+    Character&  operator=(const Character& other);
     ~Character();
     void recoverAP();
     void equip(AWeapon*);
-    bool ifWeapon() const;
     void attack(Enemy*);
     std::string getName() const;
     int getAP() const;
-    AWeapon&    getWeapon() const;
+    AWeapon*    getWeapon() const;
 };
 
 #endif
