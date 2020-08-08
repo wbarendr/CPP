@@ -6,7 +6,7 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/07 12:46:47 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/08/07 17:58:29 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/08/08 12:47:20 by Wester        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ void    Character::attack(Enemy* bad){
         return ;
     std::cout << _name << " attacks " << bad->getType() << " with a " << _gun->getName() << std::endl;
     _AP -= _gun->getAPCost();
+    _gun->attack();
     bad->takeDamage(_gun->getDamage());
     if (bad->getHP() <= 0)
         delete bad;
