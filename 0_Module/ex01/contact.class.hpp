@@ -15,7 +15,7 @@
 
 # include <iostream>
 # include <sstream>
-# include <string.h>
+# include <string>
 
 class Contact {
     std::string data[11];

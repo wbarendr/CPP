@@ -12,6 +12,9 @@
 
 
 #include "contact.class.hpp"
+#include <string>
+#include <iostream>
+#include <iomanip>
 
 Contact::Contact(void){};
 Contact::~Contact(void){};
@@ -50,11 +53,8 @@ void	Contact::table(void)
 {
 	for (int i = 0; i < 3; ++i)
 	{
-		if (data[i].size() < 11){
-			for (int k = 0; data[i].size() + k < 10; ++k)
-				std::cout << " ";
-			std::cout << data[i];
-		}
+		if (data[i].size() < 11)
+			std::cout << std::setw(10) << data[i];
 		else {
 			for (int k = 0; k < 9; ++k)
 				std::cout << data[i][k];				
@@ -95,11 +95,12 @@ int     main(void)
 			else {
 				std::cout << "     index|" << "first name|"<< " last name|" << "  nickname\n";				
 				for (int tab = 0; tab < amount; ++tab){
-					std::cout << "         " << tab + 1 << "|";
+					std::cout << std::setw(10) << tab + 1 << "|";
+					//std::cout << "         " << tab + 1 << "|";
 					new_contact[tab].table();
 				}
-				std::cout << "Who is your best friend? "; 
-				std::cin >> input;
+				std::cout << "Who is your best friend? ";
+				std::getline(std::cin, input);
 				check = 0;
 				for (unsigned long i = 0; i < input.length(); ++i)
 				{
@@ -120,8 +121,7 @@ int     main(void)
 				}
 				else
 					std::cout << "definetly not your best friend!\n";	
-				std::cin.ignore();
-			}
+		}
 		}
 		if (cmd ==  "EXIT")
 			exit(0);
