@@ -1,32 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   RadScorpion.cpp                                    :+:    :+:            */
+/*   Cure.cpp                                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/08/07 12:42:41 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/09/01 16:54:58 by wbarendr      ########   odam.nl         */
+/*   Created: 2020/09/02 14:25:50 by wbarendr      #+#    #+#                 */
+/*   Updated: 2020/09/02 14:49:49 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "RadScorpion.hpp"
+#include "Cure.hpp"
 
-RadScorpion::RadScorpion():
-   Enemy(80, "RadScorpion"){
-       std::cout <<  "* click click click *" << std::endl;
-   };
+Cure::Cure(){}
 
-RadScorpion::~RadScorpion(){
-    std::cout << "* SPROTCH *" << std::endl;
-};
-
-RadScorpion::RadScorpion(const RadScorpion& other){
+Cure::Cure(const Cure& other){
 	*this = other;
-};
+}
 
-RadScorpion&    RadScorpion::operator=(const RadScorpion& other){
-	setHP(other.getHP());
-	setType(other.getType());
+Cure&               Cure::operator=(const Cure& other){
+	_xp = other._xp;
+    _type = other._type;
     return *this;
+}
+
+Cure::~Cure(){}
+
+AMateria*           Cure::clone() const{
+    AMateria* clone = new Cure();
+    // clone = this;
+    return clone;
+}
+
+void				Cure::use( ICharacter& target){
+	_xp += 10;
+	std::cout << "* heals " << "NAME" << "’s wounds *" << std::endl;
 }

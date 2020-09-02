@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ISpaceMarine.hpp                                   :+:    :+:            */
+/*   ICharacter.hpp                                     :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/08/31 16:47:09 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/09/01 17:20:50 by wbarendr      ########   odam.nl         */
+/*   Created: 2020/09/02 14:57:55 by wbarendr      #+#    #+#                 */
+/*   Updated: 2020/09/02 15:14:10 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _ISPACEMARINE_HPP_
-# define _ISPACEMARINE_HPP_
+#ifndef _ICHARACTER_HPP_
+# define _ICHARACTER_HPP_
 
-# include <iostream>
-# include <string>
+# include "AMateria.hpp"
 
-class ISpaceMarine
+class AMateria;
+
+class ICharacter
 {
   public:
-    virtual ~ISpaceMarine() {}
-    virtual ISpaceMarine* clone() const = 0;
-    virtual void battleCry() const = 0;
-    virtual void rangedAttack() const = 0;
-    virtual void meleeAttack() const = 0;
+	virtual ~ICharacter();
+	virtual std::string const & getName() const = 0;
+	virtual void equip(AMateria* m) = 0;
+	virtual void unequip(int idx) = 0;
+	virtual void use(int idx, ICharacter& target) = 0;
 };
 
 #endif

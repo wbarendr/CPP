@@ -1,32 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   RadScorpion.cpp                                    :+:    :+:            */
+/*   Ice.cpp                                            :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/08/07 12:42:41 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/09/01 16:54:58 by wbarendr      ########   odam.nl         */
+/*   Created: 2020/09/02 14:50:22 by wbarendr      #+#    #+#                 */
+/*   Updated: 2020/09/02 14:51:04 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "RadScorpion.hpp"
+#include "Ice.hpp"
 
-RadScorpion::RadScorpion():
-   Enemy(80, "RadScorpion"){
-       std::cout <<  "* click click click *" << std::endl;
-   };
+Ice::Ice(){}
 
-RadScorpion::~RadScorpion(){
-    std::cout << "* SPROTCH *" << std::endl;
-};
-
-RadScorpion::RadScorpion(const RadScorpion& other){
+Ice::Ice(const Ice& other){
 	*this = other;
-};
+}
 
-RadScorpion&    RadScorpion::operator=(const RadScorpion& other){
-	setHP(other.getHP());
-	setType(other.getType());
+Ice&               Ice::operator=(const Ice& other){
+	_xp = other._xp;
+    _type = other._type;
     return *this;
+}
+
+Ice::~Ice(){}
+
+AMateria*           Ice::clone() const{
+    AMateria* clone = new Ice();
+    // clone = this;
+    return clone;
+}
+
+void				Ice::use( ICharacter& target){
+	_xp += 10;
+	std::cout << "*shoots an ice bolt at " << "NAME" << std::endl;
 }

@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ISpaceMarine.hpp                                   :+:    :+:            */
+/*   Cure.hpp                                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/08/31 16:47:09 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/09/01 17:20:50 by wbarendr      ########   odam.nl         */
+/*   Created: 2020/09/02 14:23:46 by wbarendr      #+#    #+#                 */
+/*   Updated: 2020/09/02 14:49:57 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _ISPACEMARINE_HPP_
-# define _ISPACEMARINE_HPP_
+#ifndef _CURE_HPP_
+# define _CURE_HPP_
 
-# include <iostream>
 # include <string>
+# include <iostream>
+# include "ICharacter.hpp"
+# include "AMateria.hpp"
 
-class ISpaceMarine
+class Cure : public AMateria
 {
   public:
-    virtual ~ISpaceMarine() {}
-    virtual ISpaceMarine* clone() const = 0;
-    virtual void battleCry() const = 0;
-    virtual void rangedAttack() const = 0;
-    virtual void meleeAttack() const = 0;
+	Cure();
+	Cure(const Cure& other);
+	Cure& 				operator=(const Cure& other);
+	~Cure();
+	AMateria* 		clone() const;
+	void 			use(ICharacter& target);
 };
 
 #endif

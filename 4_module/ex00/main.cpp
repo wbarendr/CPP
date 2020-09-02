@@ -6,13 +6,15 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/06 13:50:35 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/08/06 14:50:08 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/08/31 17:38:21 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Sorcerer.hpp"
 #include "Victim.hpp"
 #include "Peon.hpp"
+ 
+// maak een extra peon die derived is van victim!
 
 std::ostream& operator<<(std::ostream& stream, const Victim& other)
 {
