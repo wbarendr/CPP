@@ -6,7 +6,7 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/07 12:46:46 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/08/07 17:55:36 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/09/03 16:45:58 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include "Enemy.hpp"
 # include "PowerFist.hpp"
 # include "PlasmaRifle.hpp"
+# include "Embarrass.hpp"
 
 class Character
 {

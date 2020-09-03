@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   PowerFist.hpp                                      :+:    :+:            */
+/*   peasant.hpp                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/08/07 12:05:42 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/09/03 16:26:44 by wbarendr      ########   odam.nl         */
+/*   Created: 2020/09/03 16:13:03 by wbarendr      #+#    #+#                 */
+/*   Updated: 2020/09/03 16:13:47 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _POWERFIST_HPP_
-# define _POWERFIST_HPP_
+#ifndef _PEASANT_HPP_
+# define _PEASANT_HPP_
 
-# include <iostream>
-# include <string>
-# include "AWeapon.hpp"
+# include "Victim.hpp"
 
-class PowerFist : public virtual AWeapon{
+class Peasant : public virtual Victim{
   public:
-	PowerFist();
-	virtual ~PowerFist() {};
-	PowerFist(const PowerFist& other);
-	PowerFist& 	operator=(const PowerFist& other);
-	void 			attack() const;
+    ~Peasant();
+    Peasant(std::string _name);
+    Peasant(const Peasant& other);
+    Peasant& operator=(const Peasant& other);
+    
+    void  getPolymorphed()const;
 };
 
 #endif

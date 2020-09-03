@@ -6,7 +6,7 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/07 13:34:42 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/08/07 18:04:22 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/09/03 17:13:37 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include "PlasmaRifle.hpp"
 # include "Character.hpp"
 # include "RadScorpion.hpp"
+# include "Embarrass.hpp"
+
 
 std::ostream& operator<<(std::ostream& stream, const Character& other)
 {
@@ -36,7 +38,8 @@ int main()
     
     AWeapon* pr = new PlasmaRifle();
     AWeapon* pf = new PowerFist();
-    
+    AWeapon* pl = new Embarrass();
+
     me->equip(pr);
     std::cout << *me;
     me->equip(pf);
@@ -49,6 +52,12 @@ int main()
     std::cout << *me;
     me->attack(b);
     std::cout << *me;
+    me->equip(pl);
+    std::cout << *me;
+    me->attack(b);
+    std::cout << *me;
+    
+    while(1);
     
     return 0;
 }

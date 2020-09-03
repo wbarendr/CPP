@@ -6,7 +6,7 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/02 15:12:47 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/09/02 15:34:18 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/09/03 13:49:42 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 class Character : public ICharacter 
 {
-	std::strin		_name;
+	std::string		_name;
 	AMateria* 		_materia[5];
 	int				num;
 	Character();
@@ -33,7 +33,7 @@ class Character : public ICharacter
 	void 						equip(AMateria* m);
 	void 						unequip(int idx);
 	void 						use(int idx, ICharacter& target);
-
+	void						delete_mat();
 };
 
 #endif

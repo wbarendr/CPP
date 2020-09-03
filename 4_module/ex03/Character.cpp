@@ -6,19 +6,19 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/02 15:16:37 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/09/02 15:35:08 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/09/03 14:24:09 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
 
 Character::Character(){
-	_num = 0;
+	num = 0;
 }
 
 Character::Character(std::string const& name){
 	_name = name;
-	_num = 0;
+	num = 0;
 	for (int i = 0; i <= 4; ++i){
 		_materia[i] = NULL;
 	}
@@ -29,14 +29,24 @@ Character::Character(const Character& other){
 }
 
 Character&               	Character::operator=(const Character& other){
+	delete_mat();
 	_name = other._name;
-	_num = other._num;
-	while >>>>...
-	// _type = other._type;
+	num = other.num;
+	for (int i = 0; i < num; ++i){
+		_materia[i] = other._materia[i];
+	}
 	return *this;
 }
 
-Character::~Character(){}
+Character::~Character(){
+	delete_mat();
+}
+
+void						Character::delete_mat(void){
+	for (int i = 0; i < num; ++i){
+		delete _materia[i];
+	}
+}
 
 std::string const&			Character::getName(void) const{
 	return _name;
@@ -60,4 +70,8 @@ void						Character::unequip(int idx){
 	num--;
 }
 
-void 						use(hier was ik gebleven::)// test graag het unequip algorithme :) 
+void 						Character::use(int idx, ICharacter& target){
+	if (idx < 0 || idx >= num || _materia[idx] == NULL)
+		return ;
+	_materia[idx]->use(target);
+}

@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   PowerFist.hpp                                      :+:    :+:            */
+/*   Embarrass.cpp                                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/08/07 12:05:42 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/09/03 16:26:44 by wbarendr      ########   odam.nl         */
+/*   Created: 2020/09/03 16:39:11 by wbarendr      #+#    #+#                 */
+/*   Updated: 2020/09/03 16:52:11 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _POWERFIST_HPP_
-# define _POWERFIST_HPP_
+#include "Embarrass.hpp"
 
-# include <iostream>
-# include <string>
-# include "AWeapon.hpp"
+Embarrass::Embarrass(): 
+    AWeapon("genant", 10, 20){};
 
-class PowerFist : public virtual AWeapon{
-  public:
-	PowerFist();
-	virtual ~PowerFist() {};
-	PowerFist(const PowerFist& other);
-	PowerFist& 	operator=(const PowerFist& other);
-	void 			attack() const;
+Embarrass::Embarrass(const Embarrass& other){
+	*this = other;
 };
 
-#endif
+Embarrass&    Embarrass::operator=(const Embarrass& other){
+	setName(other.getName());
+	setDamage(other.getDamage());
+	setAP(other.getAPCost());
+    return *this;
+}
+
+void 		Embarrass::attack() const{
+    std::cout << "new shirt eh?.." << std::endl;
+}

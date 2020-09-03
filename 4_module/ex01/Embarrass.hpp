@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   PowerFist.hpp                                      :+:    :+:            */
+/*   Embarrass.hpp                                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/08/07 12:05:42 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/09/03 16:26:44 by wbarendr      ########   odam.nl         */
+/*   Created: 2020/09/03 16:40:49 by wbarendr      #+#    #+#                 */
+/*   Updated: 2020/09/03 16:48:30 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _POWERFIST_HPP_
-# define _POWERFIST_HPP_
+#ifndef _EMBARRASS_HPP_
+# define _EMBARRASS_HPP_
 
 # include <iostream>
 # include <string>
 # include "AWeapon.hpp"
 
-class PowerFist : public virtual AWeapon{
+class Embarrass : public virtual AWeapon{
   public:
-	PowerFist();
-	virtual ~PowerFist() {};
-	PowerFist(const PowerFist& other);
-	PowerFist& 	operator=(const PowerFist& other);
+	Embarrass();
+	virtual ~Embarrass() {};
+	Embarrass(const Embarrass& other);
+	Embarrass& 	operator=(const Embarrass& other);
 	void 			attack() const;
 };
 

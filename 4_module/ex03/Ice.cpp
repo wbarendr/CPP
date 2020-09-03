@@ -6,13 +6,15 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/02 14:50:22 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/09/02 14:51:04 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/09/03 14:27:19 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Ice.hpp"
 
-Ice::Ice(){}
+Ice::Ice() : AMateria("ice"){
+    // AMateria("ice");
+};
 
 Ice::Ice(const Ice& other){
 	*this = other;
@@ -32,7 +34,8 @@ AMateria*           Ice::clone() const{
     return clone;
 }
 
-void				Ice::use( ICharacter& target){
+void				Ice::use(ICharacter& target){
 	_xp += 10;
-	std::cout << "*shoots an ice bolt at " << "NAME" << std::endl;
+    (void)target;
+	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
 }

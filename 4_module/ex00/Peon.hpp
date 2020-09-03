@@ -6,15 +6,13 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/06 14:13:23 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/08/06 14:40:17 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/09/03 16:13:55 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _Peon_HPP_
-# define _Peon_HPP_
+#ifndef _PEON_HPP_
+# define _PEON_HPP_
 
-# include <iostream>
-# include <string>
 # include "Victim.hpp"
 
 class Peon : public virtual Victim{

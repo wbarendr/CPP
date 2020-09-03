@@ -6,7 +6,7 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/02 13:53:52 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/09/02 14:50:01 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/09/03 14:09:09 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ AMateria&               AMateria::operator=(const AMateria& other){
 	return *this;
 }
 
-// AMateria::~AMateria(){};
+AMateria::~AMateria(){};
 
 std::string const&      AMateria::getType(void) const {
 	return _type;
@@ -42,7 +42,7 @@ unsigned int      		AMateria::getXP(void) const {
 	return _xp;
 }
 
-void					AMateria::use( ICharacter& target){
+void					AMateria::use(ICharacter& target){
 	_xp += 10;
 	(void)target;
 }
