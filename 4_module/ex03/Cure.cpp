@@ -6,14 +6,14 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/02 14:25:50 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/09/03 14:26:59 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/09/04 14:20:13 by Wester        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cure.hpp"
 
 Cure::Cure() : AMateria("cure"){
-    // AMateria("ice");
+    // AMateria("cure");
 };
 
 Cure::Cure(const Cure& other){
@@ -30,12 +30,10 @@ Cure::~Cure(){}
 
 AMateria*           Cure::clone() const{
     AMateria* clone = new Cure();
-    // clone = this;
     return clone;
 }
 
 void				Cure::use(ICharacter& target){
 	_xp += 10;
-    (void)target;
 	std::cout << "* heals " << target.getName() << "\'s wounds *" << std::endl;
 }

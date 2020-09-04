@@ -6,7 +6,7 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/03 13:29:55 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/09/03 14:00:35 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/09/04 15:21:39 by Wester        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include "Ice.hpp"
 # include "AMateria.hpp"
 # include "Cure.hpp"
+# include "Fire.hpp"
 # include "IMateriaSource.hpp"
 
 class MateriaSource : public IMateriaSource

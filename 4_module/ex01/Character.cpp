@@ -6,7 +6,7 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/07 12:46:47 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/09/03 17:13:02 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/09/04 13:31:29 by Wester        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,10 @@ void    Character::recoverAP(){
 }
 
 void    Character::attack(Enemy* bad){
-    if (!_gun || _AP < _gun->getAPCost() || bad->getHP() <= 0)
+    if (!_gun || _AP < _gun->getAPCost() || bad->getHP() <= 0){
+        std::cout << "attack didn't go through..." << std::endl;
         return ;
+    }
     std::cout << _name << " attacks " << bad->getType() << " with a " << _gun->getName() << std::endl;
     _AP -= _gun->getAPCost();
     _gun->attack();

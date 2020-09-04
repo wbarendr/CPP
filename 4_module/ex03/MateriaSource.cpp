@@ -6,7 +6,7 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/03 13:31:53 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/09/03 14:19:03 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/09/04 15:22:06 by Wester        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,7 @@ AMateria* MateriaSource::createMateria(std::string const& type) {
         return new Ice();
     else if (type == "cure")
         return new Cure();
+    else if (type == "fire")
+        return new Fire();
     return NULL;
 };

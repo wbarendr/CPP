@@ -6,7 +6,7 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/03 13:26:46 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/09/03 14:00:27 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/09/04 15:20:43 by Wester        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 
 # include <iostream>
 # include <string>
-// # include "AMateria.hpp"
-// # include "ICharacter.hpp"
 
 class IMateriaSource
 {
