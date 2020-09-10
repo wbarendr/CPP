@@ -1,0 +1,36 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   Intern.hpp                                         :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: Wester <Wester@student.codam.nl>             +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2020/09/10 16:33:50 by Wester        #+#    #+#                 */
+/*   Updated: 2020/09/10 16:55:56 by Wester        ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef _INTERN_HPP_
+# define _INTERN_HPP_
+
+# include "Bureaucrat.hpp"
+# include "Form.hpp"
+# include "PresidentialPardonForm.hpp"
+# include "RobotomyRequestForm.hpp"
+# include "ShrubberyCreationForm.hpp"
+
+class Intern
+{
+    Form *_forms[3];
+    
+  public:
+	Intern();
+	Intern(const Intern& other);
+	Intern&		operator=(const Intern& other);
+	virtual ~Intern();
+	
+	Form*           makeForm(std::string form, std::string target);
+};
+
+
+#endif

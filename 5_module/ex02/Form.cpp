@@ -6,7 +6,7 @@
 /*   By: Wester <Wester@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/09 14:29:31 by Wester        #+#    #+#                 */
-/*   Updated: 2020/09/09 18:34:36 by Wester        ########   odam.nl         */
+/*   Updated: 2020/09/10 12:22:40 by Wester        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,10 @@ Form::Form():
 Form::Form(const std::string name, int sign, int execute): 
 	_name(name), _grade_sign(sign), _grade_execute(execute){
 	_signed = false;
+}
+
+Form::Form(const std::string name, int sign, int execute, bool lsigned): 
+	_name(name), _signed(lsigned), _grade_sign(sign), _grade_execute(execute){
 }
 
 Form::Form(const Form& other):
@@ -66,10 +70,16 @@ void        Form::beSigned(const Bureaucrat& crat){
 }
 
 Form::GradeTooLowException::GradeTooLowException(void):
-	runtime_error("gonna need a higher bureaucrat to sign these papers mate..")
+	runtime_error("gonna need a higher bureaucrat to sign or execute these papers mate..")
 {}
 
 Form::GradeTooLowException::~GradeTooLowException(void) throw() {}
+
+Form::NotSignedException::NotSignedException(void):
+	runtime_error("these papers are not signed yet mate..")
+{}
+
+Form::NotSignedException::~NotSignedException(void) throw() {}
 
 std::ostream&			operator<<(std::ostream& output, const Form& form){
 	output << form.getName() << " has " << form.getGradeSign() << " as grade to sign, and " << form.getGradeExecute() << " as grade to execute. ";
@@ -78,4 +88,11 @@ std::ostream&			operator<<(std::ostream& output, const Form& form){
 	else 
 		output << "Form has not been signed";
 	return output;
+}
+
+void                    Form::execute(Bureaucrat const & executor) const {
+	if (!this->_signed)
+		throw Form::NotSignedException();
+	if (executor.getGrade() > this->_grade_execute)
+		throw Form::GradeTooLowException();
 }
