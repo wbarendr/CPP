@@ -12,12 +12,13 @@
 
 #include <iostream>
 #include <string>
+#include <iomanip>
 
 struct          Data
 {
     std::string     s1;
     int             n;
-    char            s2[8];
+    std::string     s2;
 };
 
 Data*       create_data(void){
@@ -38,8 +39,8 @@ Data*       create_data(void){
     // data_n->s2[7] = 0;
     data_n->n = std::rand();
     for (int i = 0; i < 8; ++i){
-            data_n->s1[i] = alpha_num[std::rand() % 62];
-            data_n->s2[i] = alpha_num[std::rand() % 62];
+            data_n->s1.push_back(alpha_num[std::rand() % 62]);
+            data_n->s2.push_back(alpha_num[std::rand() % 62]);
     }
     return data_n;
 }
@@ -47,10 +48,9 @@ Data*       create_data(void){
 void*           serialize(void){
     Data* data_n = create_data();
     
-    char* one = new char[sizeof(data_n)];
+    char* one = new char[20];
     for (int i = 0; i < 8 ; ++i){
         one[i] = data_n->s1[i];
-        std::cout << data_n->s1[i] << std::endl;
     }
     int* two = (int *)(one + 8);
     *two = data_n->n;
@@ -68,7 +68,7 @@ Data*       deserialize(void* raw){
 
     char* one = (char *)raw;
     for (int i = 0; i < 8 ; ++i){
-        data_n->s1[i] = *one;
+        data_n->s1.push_back(*one);
         one++;
     }
     int* two = (int *)one;
@@ -76,7 +76,7 @@ Data*       deserialize(void* raw){
     two++;
     char * three = (char *)two;
     for (int i = 0; i < 8 ; ++i){
-        data_n->s2[i] = three[i];
+        data_n->s2.push_back(three[i]);
     }
     return data_n;
 }
@@ -87,6 +87,15 @@ int             main(void)
     Data*   data_n;
 
     raw = serialize();
+    std::string str = (char *)raw;
+    // str+= 8;
+    char *num_c = (char *)raw;
+    num_c += 8;
+    int* num = (int *)num_c;
+    std::cout << "raw: s1  " << &str << "  " << str.substr(0, 8) << std::endl;
+    std::cout << "raw: NUM  " << &str << "  " << *num << std::endl;
+    std::cout << "raw: s2  " << &str << "  " << str.substr(12, 19) << std::endl;
+
     data_n = deserialize(raw);
     std::cout << "s1  " << &data_n->s1 << "  " << data_n->s1 << std::endl;
     std::cout << "n   " << &data_n->n << "  " << data_n->n << std::endl;
