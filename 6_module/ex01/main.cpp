@@ -6,7 +6,7 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/16 15:09:47 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/09/16 17:19:07 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/09/17 12:01:47 by wester        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,17 +26,10 @@ Data*       create_data(void){
     std::string      alpha_num = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
     static bool first = false;
-    if (!false){
+    if (!first){
         std::srand(std::time(0));
         first = true;
     }
-    // data_n->n = 12;
-    // for (int i = 0; i < 7; ++i){
-    //     data_n->s1[i] = 'h';
-    //     data_n->s2[i] = 'p';
-    // }
-    // data_n->s1[7] = 0;
-    // data_n->s2[7] = 0;
     data_n->n = std::rand();
     for (int i = 0; i < 8; ++i){
             data_n->s1.push_back(alpha_num[std::rand() % 62]);
@@ -60,7 +53,8 @@ void*           serialize(void){
         *three = data_n->s2[i];
         three++;
     }
-    return (void*)one;
+    delete data_n;
+    return static_cast<void*>(one);
 }
 
 Data*       deserialize(void* raw){
@@ -86,19 +80,23 @@ int             main(void)
     void*   raw;
     Data*   data_n;
 
-    raw = serialize();
-    std::string str = (char *)raw;
-    // str+= 8;
-    char *num_c = (char *)raw;
-    num_c += 8;
-    int* num = (int *)num_c;
-    std::cout << "raw: s1  " << &str << "  " << str.substr(0, 8) << std::endl;
-    std::cout << "raw: NUM  " << &str << "  " << *num << std::endl;
-    std::cout << "raw: s2  " << &str << "  " << str.substr(12, 19) << std::endl;
+    for (int i = 0; i < 3; ++i){
+        raw = serialize();
+        std::string str = (char *)raw;
+        char *num_c = (char *)raw;
+        num_c += 8;
+        int* num = (int *)num_c;
+        std::cout << "raw s1:  " << &str << "  " << str.substr(0, 8) << std::endl;
+        std::cout << "raw n:   " << &str << "  " << *num << std::endl;
+        std::cout << "raw s2:  " << &str << "  " << str.substr(12, 20) << std::endl;
 
-    data_n = deserialize(raw);
-    std::cout << "s1  " << &data_n->s1 << "  " << data_n->s1 << std::endl;
-    std::cout << "n   " << &data_n->n << "  " << data_n->n << std::endl;
-    std::cout << "s2  " << &data_n->s2 << "  " << data_n->s2 << std::endl;
+        data_n = deserialize(raw);
+        std::cout << "    s1:  " << &data_n->s1 << "  " << data_n->s1 << std::endl;
+        std::cout << "    n:   " << &data_n->n << "  " << data_n->n << std::endl;
+        std::cout << "    s2:  " << &data_n->s2 << "  " << data_n->s2 << std::endl << std::endl;      
+        delete static_cast<char*>(raw);
+        delete data_n;
+    }
+    system("leaks serialization | grep bytes");
     return 0;
 }
