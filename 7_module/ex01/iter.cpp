@@ -6,7 +6,7 @@
 /*   By: wester <wester@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/21 14:27:51 by wester        #+#    #+#                 */
-/*   Updated: 2020/09/21 14:51:19 by wester        ########   odam.nl         */
+/*   Updated: 2020/09/23 14:43:11 by wester        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ template<typename T>
 void    print(T A){
 	std::cout << A << std::endl;
 }
-
-
 
 template<typename T>
 void    iter(T* arr, int length, void func(T A)){
