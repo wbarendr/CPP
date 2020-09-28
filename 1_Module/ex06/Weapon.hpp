@@ -6,7 +6,7 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/29 11:18:38 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/08/03 11:32:26 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/09/25 14:19:06 by wester        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,15 @@
 class Weapon {
     std::string type;
   public:  
-    const std::string& getType();
-    void setType(std::string kind);
     
     Weapon();
     Weapon(const Weapon &other);
+    Weapon&               operator=(const Weapon& other);
     Weapon(std::string kind);
     ~Weapon();
+    
+    const std::string&    getType();
+    void                  setType(std::string kind);
 };
-
 
 #endif

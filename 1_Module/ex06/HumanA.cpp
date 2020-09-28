@@ -6,16 +6,16 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/29 11:27:33 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/07/29 12:26:54 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/09/25 14:19:43 by wester        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanA.hpp"
 
 HumanA::HumanA(std::string s, Weapon& w): name(s), gun(w)
-{};
+{}
 
-HumanA::~HumanA(){};
+HumanA::~HumanA(){}
 
 void HumanA::attack()
 {

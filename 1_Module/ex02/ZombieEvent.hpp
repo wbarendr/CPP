@@ -6,7 +6,7 @@
 /*   By: Wester <Wester@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/28 16:42:37 by Wester        #+#    #+#                 */
-/*   Updated: 2020/07/28 17:36:22 by Wester        ########   odam.nl         */
+/*   Updated: 2020/09/25 11:38:48 by wester        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,16 @@
 # include <iostream>
 # include "Zombie.hpp"
 
-class ZombieEvent {
+class ZombieEvent 
+{
+    std::string _type;
+    
   public:
+    ZombieEvent(void);
+    ~ZombieEvent(void);
     void    setZombieType(std::string type);
     Zombie* newZombie(std::string name);
     Zombie* randomChump();
-    ZombieEvent(void);
-    ~ZombieEvent(void);
-    std::string type;
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/29 19:50:32 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/09/25 14:57:45 by wester        ########   odam.nl         */
+/*   Updated: 2020/09/26 12:32:20 by wester        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,21 @@ class Fixed {
 	Fixed();
 	~Fixed();
 	Fixed(const Fixed &object);
-	Fixed&				operator= (const Fixed &overload);
+	Fixed&				operator=(const Fixed &overload);
+	bool				operator>(const Fixed &overload);
+	bool				operator<(const Fixed &overload);
+	bool				operator>=(const Fixed &overload);
+	bool				operator<=(const Fixed &overload);
+	bool				operator==(const Fixed &overload);
+	bool				operator!=(const Fixed &overload);
+	Fixed&				operator+(const Fixed &overload);
+	Fixed&				operator-(const Fixed &overload);
+	Fixed&				operator*(const Fixed &overload);
+	Fixed&				operator/(const Fixed &overload);
+	Fixed&				operator++();
+	Fixed&				operator--();
+	static const Fixed&	max(const Fixed &f1, const Fixed &f2);
+	static Fixed&		max(Fixed &f1, Fixed &f2);
 	int					getRawBits(void) const;
 	void				setRawBits(int const raw);
 

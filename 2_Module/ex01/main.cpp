@@ -6,17 +6,11 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/01 10:41:41 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/08/01 11:01:39 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/09/25 15:05:32 by wester        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-
-std::ostream& operator<<(std::ostream& stream, const Fixed& other)
-{
-	stream << other.toFloat();
-	return stream;
-};
 
 int
 main(void)

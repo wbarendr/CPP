@@ -6,7 +6,7 @@
 /*   By: Wester <Wester@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/28 20:54:35 by Wester        #+#    #+#                 */
-/*   Updated: 2020/07/29 13:33:50 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/09/25 14:06:32 by wester        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ Brain::Brain()
     this->pathways = 5;
     buff << this;
     this->address = buff.str();
-};
+}
 
-Brain::~Brain(){};
+Brain::~Brain(){}
 
 std::string     Brain::identify(void)
 {

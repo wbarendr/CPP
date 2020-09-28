@@ -6,23 +6,24 @@
 /*   By: Wester <Wester@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/28 18:27:43 by Wester        #+#    #+#                 */
-/*   Updated: 2020/07/28 20:17:53 by Wester        ########   odam.nl         */
+/*   Updated: 2020/09/25 13:56:07 by wester        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef _ZombieHorde_HPP_
 # define _ZombieHorde_HPP_
 
-# include <iostream>
-# include <string.h>
 # include "Zombie.hpp"
 
-class ZombieHorde {
+class ZombieHorde 
+{
+    int       _num;
+    Zombie*   _zombieTeam;
   public:
-    Zombie *z_team;
-    int number;
     ZombieHorde(int N);
     ~ZombieHorde();
+    int       getNum() const;
+    Zombie    getZombieTeam(int n);
 };
 
 #endif

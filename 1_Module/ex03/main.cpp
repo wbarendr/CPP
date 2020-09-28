@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Human.cpp                                          :+:    :+:            */
+/*   main.cpp                                           :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: Wester <Wester@student.codam.nl>             +#+                     */
+/*   By: wester <wester@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/07/29 09:44:51 by Wester        #+#    #+#                 */
-/*   Updated: 2020/09/25 14:06:22 by wester        ########   odam.nl         */
+/*   Created: 2020/09/25 12:24:06 by wester        #+#    #+#                 */
+/*   Updated: 2020/09/25 14:01:06 by wester        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Human.hpp"
+#include "ZombieHorde.hpp"
 
-Human::Human(){}
-Human::~Human(){}
-
-Brain           Human::getBrain()
+int         main(void)
 {
-    return this->grey_matter;
-}
-
-std::string     Human::identify(void)
-{
-   return this->grey_matter.identify(); 
+    ZombieHorde squad = ZombieHorde(5);
+    
+    for(int i = 0; i < squad.getNum(); ++i)
+        squad.getZombieTeam(i).announce();
+    // system("leaks a.out | grep bytes");
+    return 0;
 }

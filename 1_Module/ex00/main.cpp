@@ -6,7 +6,7 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/28 13:06:15 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/07/28 16:13:16 by Wester        ########   odam.nl         */
+/*   Updated: 2020/09/25 11:25:09 by wester        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ void	ponyOnTheStack(void)
 	spony.head = "grey";
 	spony.legs = "4";
 	spony.ears = "big";
-	std::cout << "head: " << spony.head << " |address:  " << &spony.head << std::endl;
-	std::cout << "legs: " << spony.legs << " |address:  " << &spony.legs << std::endl;
-	std::cout << "ears: " << spony.ears << " |address:  " << &spony.ears << std::endl;
+	std::cout << "head: " << spony.head << " |address: " << &spony.head << std::endl;
+	std::cout << "legs: " << spony.legs << "    |address: " << &spony.legs << std::endl;
+	std::cout << "ears: " << spony.ears << "  |address: " << &spony.ears << std::endl;
 }
 	
 
@@ -35,9 +35,9 @@ void	ponyOnTheHeap(void)
 		hpony->legs = "6";
 		hpony->ears = "huge";
 	
-		std::cout << "head: " << hpony->head << " |address:  " << &hpony->head << std::endl;
-		std::cout << "legs: " << hpony->legs << " |address:  " << &hpony->legs << std::endl;
-		std::cout << "ears: " << hpony->ears << " |address:  " << &hpony->ears << std::endl;
+		std::cout << "head: " << hpony->head << " |address: " << &hpony->head << std::endl;
+		std::cout << "legs: " << hpony->legs << "      |address: " << &hpony->legs << std::endl;
+		std::cout << "ears: " << hpony->ears << "   |address: " << &hpony->ears << std::endl;
 		delete hpony;
 	}
 }

@@ -3,24 +3,31 @@
 /*                                                        ::::::::            */
 /*   main.cpp                                           :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
+/*   By: wester <wester@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/07/29 18:05:01 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/09/25 14:53:29 by wester        ########   odam.nl         */
+/*   Created: 2020/09/26 12:00:44 by wester        #+#    #+#                 */
+/*   Updated: 2020/09/26 12:02:04 by wester        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
+#include <iostream>
 
-int main( void ) 
-{
-    Fixed a;
-    Fixed b( a );
-    Fixed c;
- 
-    c = b;
-    std::cout << a.getRawBits() << std::endl;
-    std::cout << b.getRawBits() << std::endl;
-    std::cout << c.getRawBits() << std::endl;
-    return 0;
+int     main( void ) 
+{ 
+    Fixed           a;
+    Fixed const     b( Fixed( 5.05f ) * Fixed( 2 ) );
+    
+    std::cout << a << std::endl;
+    std::cout << ++a << std::endl;
+    std::cout << a << std::endl;
+    std::cout << a++ << std::endl;
+    std::cout << a << std::endl;
+
+    
+    std::cout << b << std::endl;
+    
+    
+    std::cout << Fixed::max( a, b ) << std::endl;
+    return 0; 
 }

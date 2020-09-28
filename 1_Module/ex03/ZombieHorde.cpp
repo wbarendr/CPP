@@ -6,47 +6,29 @@
 /*   By: Wester <Wester@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/28 18:27:34 by Wester        #+#    #+#                 */
-/*   Updated: 2020/07/28 20:18:13 by Wester        ########   odam.nl         */
+/*   Updated: 2020/09/25 14:01:28 by wester        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ZombieHorde.hpp"
 
-void    Zombie::randomChump(void)
-{
-    std::string     name;
-    std::string     pool[] = {"jan", "piet", "kees", "bas", "Batskelien"};
-    int             num;
-    static int      yes = 1;
-    
-    if (yes == 1){
-        srand(time(NULL));
-        yes = 0;
-    }
-    num = rand() % 5;
-    name = pool[num];
-    this->name = name;
-}
-
-ZombieHorde::ZombieHorde(int N): number(N)
-{
-    this->z_team = new Zombie[N]();
+ZombieHorde::ZombieHorde(int N){
+    _num = N;
+    _zombieTeam = new Zombie[N]();
 
     for(int i = 0; i < N; ++i)
     {
-        this->z_team[i].type = "nerd";
-        this->z_team[i].randomChump();
+        this->_zombieTeam[i].change_type("nerd");
+        this->_zombieTeam[i].randomChump();
     }
 }
 
-ZombieHorde::~ZombieHorde()
-{
-};
+Zombie    ZombieHorde::getZombieTeam(int n){
+    return _zombieTeam[n];
+}
 
-int         main(void)
-{
-    ZombieHorde squad = ZombieHorde(5);
-    
-    for(int i = 0; i < squad.number; ++i)
-        squad.z_team[i].announce();
+ZombieHorde::~ZombieHorde()
+{}
+int         ZombieHorde::getNum(void) const{
+    return _num;
 }

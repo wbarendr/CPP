@@ -6,7 +6,7 @@
 /*   By: Wester <Wester@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/28 16:54:47 by Wester        #+#    #+#                 */
-/*   Updated: 2020/07/28 18:02:58 by Wester        ########   odam.nl         */
+/*   Updated: 2020/09/25 11:44:36 by wester        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,20 @@
 
 void    ZombieEvent::setZombieType(std::string type)
 {
-    this->type = type;
+    _type = type;
 }
 
 Zombie* ZombieEvent::newZombie(std::string name)
 {
     Zombie* newZom = new Zombie();
 
-    newZom->type = this->type;
-    newZom->name = name;
+    newZom->change_type(this->_type);
+    newZom->change_name(name);
     return newZom;
 }
 
-ZombieEvent::ZombieEvent(){};
-ZombieEvent::~ZombieEvent(){};
+ZombieEvent::ZombieEvent(){}
+ZombieEvent::~ZombieEvent(){}
 
 Zombie* ZombieEvent::randomChump(void)
 {

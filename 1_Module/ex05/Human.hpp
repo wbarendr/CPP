@@ -6,7 +6,7 @@
 /*   By: Wester <Wester@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/28 21:44:07 by Wester        #+#    #+#                 */
-/*   Updated: 2020/07/29 11:01:41 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/09/25 14:06:05 by wester        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@
 # include "Brain.hpp"
 
 class Human {
-	public:
-		Brain						getBrain();
-		std::string     identify();
-		Human();
-		~Human();
-    Brain grey_matter;
+    Brain 			grey_matter;
+  public:
+	Human();
+	~Human();
+	Brain			getBrain();
+	std::string     identify();
 };
 
 #endif

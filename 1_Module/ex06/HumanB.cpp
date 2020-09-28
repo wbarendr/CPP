@@ -6,15 +6,15 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/29 12:29:35 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/08/03 11:38:45 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/09/25 14:19:45 by wester        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanB.hpp"
 
-HumanB::HumanB(std::string s): name(s){};
+HumanB::HumanB(std::string s): name(s){}
 
-HumanB::~HumanB(){};
+HumanB::~HumanB(){}
 
 void HumanB::attack()
 {

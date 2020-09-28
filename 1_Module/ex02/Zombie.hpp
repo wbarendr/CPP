@@ -6,7 +6,7 @@
 /*   By: Wester <Wester@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/28 16:29:34 by Wester        #+#    #+#                 */
-/*   Updated: 2020/07/28 16:38:35 by Wester        ########   odam.nl         */
+/*   Updated: 2020/09/25 11:48:14 by wester        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,17 @@
 # include <iostream>
 # include <string.h>
 
-class Zombie {
-  public:
-    std::string type;
-    std::string name;
-    void announce(){
-        std::cout << "<" << name << " (" << type << ")> Braiiiiiiiiiinnnnnssss..." << std::endl;
-    }
-    
-  Zombie(void);
-  ~Zombie(void);
+class Zombie 
+{
+		std::string _type;
+		std::string _name;
+		
+	public:
+		Zombie(void);
+		~Zombie(void);
+		void 						announce(void);
+		void						change_name(std::string new_name);
+		void						change_type(std::string new_type);
 };
 
 #endif
