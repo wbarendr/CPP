@@ -6,7 +6,7 @@
 /*   By: Wester <Wester@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/04 15:41:34 by Wester        #+#    #+#                 */
-/*   Updated: 2020/09/09 13:38:06 by Wester        ########   odam.nl         */
+/*   Updated: 2020/09/28 16:51:20 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class Bureaucrat
 	Bureaucrat(const std::string name, int grade);
 	Bureaucrat(const Bureaucrat& other);
 	Bureaucrat&					operator=(const Bureaucrat& other);
-	virtual ~Bureaucrat();
+	~Bureaucrat();
 	
 	const std::string			getName() const;
 	int							getGrade() const;
