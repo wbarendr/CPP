@@ -6,7 +6,7 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/03 12:54:48 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/08/04 16:33:52 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/09/28 11:45:22 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 # define _SCAVTRAP_HPP_
 
 #include "ClapTrap.hpp"
-#include <iostream>
-#include <string>
 
 class ScavTrap : public ClapTrap{
   public:
@@ -23,7 +21,7 @@ class ScavTrap : public ClapTrap{
     ScavTrap(std::string name);
     ScavTrap(const ScavTrap& other);
 		ScavTrap&		operator=(const ScavTrap &overload);
-    ~ScavTrap();
+    virtual ~ScavTrap();
     void rangedAttack(std::string const& target);
     void meleeAttack(std::string const& target);
     void challengeNewcomer(std::string const& target);

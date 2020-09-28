@@ -6,7 +6,7 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/07 12:46:46 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/09/03 16:45:58 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/09/28 12:25:46 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,6 @@
 # include <string>
 # include "AWeapon.hpp"
 # include "Enemy.hpp"
-# include "PowerFist.hpp"
-# include "PlasmaRifle.hpp"
-# include "Embarrass.hpp"
 
 class Character
 {
@@ -29,7 +26,7 @@ class Character
     int         _AP;
     AWeapon*    _gun;
     
-public:
+  public:
     Character(std::string const& name);
     Character(const Character& other);
     Character&  operator=(const Character& other);
@@ -41,5 +38,7 @@ public:
     int getAP() const;
     AWeapon*    getWeapon() const;
 };
+
+std::ostream&   operator<<(std::ostream& stream, const Character& other);
 
 #endif

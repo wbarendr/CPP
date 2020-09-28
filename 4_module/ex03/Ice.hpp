@@ -6,15 +6,13 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/02 14:51:28 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/09/03 13:03:28 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/09/28 12:35:30 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef _ICE_HPP_
 # define _ICE_HPP_
 
-# include <string>
-# include <iostream>
 # include "ICharacter.hpp"
 # include "AMateria.hpp"
 

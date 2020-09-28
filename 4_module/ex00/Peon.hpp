@@ -6,7 +6,7 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/06 14:13:23 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/09/03 16:13:55 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/09/28 12:11:51 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 class Peon : public virtual Victim{
   public:
-    ~Peon();
+    virtual ~Peon();
     Peon(std::string _name);
     Peon(const Peon& other);
     Peon& operator=(const Peon& other);

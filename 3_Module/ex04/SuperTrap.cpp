@@ -6,7 +6,7 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/03 18:17:39 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/08/05 13:32:54 by Wester        ########   odam.nl         */
+/*   Updated: 2020/09/28 11:53:46 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ SuperTrap::SuperTrap(){
     Armor_damage_reduction = get_armor();
     Ranged_attack_damage = get_ranged();
 	std::cout << "Making a supa troupa & naming it" << std::endl;
-};
+}
 
 SuperTrap::SuperTrap(std::string name){
     Level = 1;
@@ -37,7 +37,7 @@ SuperTrap::SuperTrap(std::string name){
 	std::cout << "Making a supa troupa & naming it" << std::endl;
 	FragTrap::giveName(name);
 	NinjaTrap::giveName(name);
-};
+}
 
 SuperTrap::SuperTrap(const SuperTrap& other){
 	*this = other;
@@ -54,7 +54,7 @@ SuperTrap&	SuperTrap::operator=(const SuperTrap& overload){
 	Ranged_attack_damage = overload.Ranged_attack_damage;
 	Armor_damage_reduction = overload.Armor_damage_reduction;
 	return *this;
-};
+}
 
 void	SuperTrap::print_vars(void)
 {
@@ -72,4 +72,6 @@ void    SuperTrap::rangedAttack(std::string const& target){ FragTrap::rangedAtta
 void	SuperTrap::beRepaired(int num){ NinjaTrap::beRepaired(num); }
 void    SuperTrap::takeDamage(unsigned int num){ FragTrap::takeDamage(num); }
 
-SuperTrap::~SuperTrap(){ std::cout << "Destroyer of all supa's!" << std::endl; };
+SuperTrap::~SuperTrap(){
+	std::cout << "Destroyer of all supa's!" << std::endl;
+}

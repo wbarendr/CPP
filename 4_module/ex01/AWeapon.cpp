@@ -6,25 +6,25 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/07 10:42:55 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/08/07 18:02:18 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/09/28 12:27:35 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AWeapon.hpp"
 
-AWeapon::AWeapon(){};
+AWeapon::AWeapon(){}
 
 AWeapon::AWeapon(std::string const& name, int apcost, int damage){
 	_name = name;
 	_damage = damage;
 	_ap = apcost;
-};
+}
 
-AWeapon::~AWeapon(){};
+AWeapon::~AWeapon(){}
 
 AWeapon::AWeapon(const AWeapon& other){
 	*this = other;
-};
+}
 
 AWeapon&    AWeapon::operator=(const AWeapon& other){
 	_name = other._name;

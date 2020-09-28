@@ -6,20 +6,20 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/07 11:08:14 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/08/07 14:59:09 by Wester        ########   odam.nl         */
+/*   Updated: 2020/09/28 12:26:06 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PlasmaRifle.hpp"
 
 PlasmaRifle::PlasmaRifle(): 
-    AWeapon("Plasma Rifle", 5, 21){};
+    AWeapon("Plasma Rifle", 5, 21){}
 
-PlasmaRifle::~PlasmaRifle(){};
+PlasmaRifle::~PlasmaRifle(){}
 
 PlasmaRifle::PlasmaRifle(const PlasmaRifle& other){
 	*this = other;
-};
+}
 
 PlasmaRifle&    PlasmaRifle::operator=(const PlasmaRifle& other){
 	setName(other.getName());

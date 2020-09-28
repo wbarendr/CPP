@@ -6,7 +6,7 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/02 14:50:22 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/09/03 14:27:19 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/09/28 12:35:24 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Ice::Ice() : AMateria("ice"){
     // AMateria("ice");
-};
+}
 
 Ice::Ice(const Ice& other){
 	*this = other;

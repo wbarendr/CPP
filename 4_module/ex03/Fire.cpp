@@ -6,7 +6,7 @@
 /*   By: Wester <Wester@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/04 14:19:20 by Wester        #+#    #+#                 */
-/*   Updated: 2020/09/04 14:42:56 by Wester        ########   odam.nl         */
+/*   Updated: 2020/09/28 12:35:08 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Fire::Fire() : AMateria("Fire"){
     // AMateria("fire!!");
-};
+}
 
 Fire::Fire(const Fire& other){
 	*this = other;

@@ -6,7 +6,7 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/07 12:26:27 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/08/07 15:00:13 by Wester        ########   odam.nl         */
+/*   Updated: 2020/09/28 12:26:55 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,15 @@
 SuperMutant::SuperMutant():
    Enemy(170, "Super Mutant"){
        std::cout << "Gaaah. Me want smash heads!" << std::endl;
-   };
+}
 
 SuperMutant::~SuperMutant(){
     std::cout << "Aaargh..." << std::endl;
-};
+}
 
 SuperMutant::SuperMutant(const SuperMutant& other){
 	*this = other;
-};
+}
 
 SuperMutant&    SuperMutant::operator=(const SuperMutant& other){
 	setHP(other.getHP());

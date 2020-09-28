@@ -6,7 +6,7 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/06 13:43:22 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/08/06 14:27:19 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/09/28 12:20:20 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,7 @@ class Victim {
     Victim& operator=(const Victim& other);
     void  getPolymorphed()const;
 };
+
+std::ostream&   operator<<(std::ostream& stream, const Victim& other);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/03 18:15:20 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/08/05 13:32:40 by Wester        ########   odam.nl         */
+/*   Updated: 2020/09/28 11:52:42 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 
 #include "FragTrap.hpp"
 #include "NinjaTrap.hpp"
-#include <iostream>
-#include <string>
 
 class SuperTrap : public NinjaTrap, public FragTrap{
   protected:

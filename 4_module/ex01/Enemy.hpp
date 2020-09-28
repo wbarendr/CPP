@@ -6,15 +6,13 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/07 12:09:26 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/09/03 17:00:26 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/09/28 12:27:25 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef _ENEMY_HPP_
 # define _ENEMY_HPP_
 
-# include <iostream>
-# include <string>
 # include "AWeapon.hpp"
 
 class Enemy

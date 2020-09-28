@@ -6,24 +6,24 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/07 12:12:40 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/09/03 17:00:36 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/09/28 12:24:33 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Enemy.hpp"
 
-Enemy::Enemy(){};
+Enemy::Enemy(){}
 
 Enemy::Enemy(int hp, std::string const& type){
 	_hp = hp;
 	_type = type;
-};
+}
 
-Enemy::~Enemy(){};
+Enemy::~Enemy(){}
 
 Enemy::Enemy(const Enemy& other){
 	*this = other;
-};
+}
 
 Enemy&    Enemy::operator=(const Enemy& other){
 	_hp = other._hp;

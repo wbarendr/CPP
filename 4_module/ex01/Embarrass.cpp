@@ -6,18 +6,19 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/03 16:39:11 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/09/03 16:52:11 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/09/28 12:24:16 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Embarrass.hpp"
 
 Embarrass::Embarrass(): 
-    AWeapon("genant", 10, 20){};
+    AWeapon("genant", 10, 20){
+}
 
 Embarrass::Embarrass(const Embarrass& other){
 	*this = other;
-};
+}
 
 Embarrass&    Embarrass::operator=(const Embarrass& other){
 	setName(other.getName());
