@@ -6,7 +6,7 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/29 19:50:32 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/09/26 12:32:20 by wester        ########   odam.nl         */
+/*   Updated: 2020/09/28 10:49:29 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,18 +26,18 @@ class Fixed {
 	~Fixed();
 	Fixed(const Fixed &object);
 	Fixed&				operator=(const Fixed &overload);
-	bool				operator>(const Fixed &overload);
-	bool				operator<(const Fixed &overload);
-	bool				operator>=(const Fixed &overload);
-	bool				operator<=(const Fixed &overload);
-	bool				operator==(const Fixed &overload);
-	bool				operator!=(const Fixed &overload);
-	Fixed&				operator+(const Fixed &overload);
-	Fixed&				operator-(const Fixed &overload);
-	Fixed&				operator*(const Fixed &overload);
-	Fixed&				operator/(const Fixed &overload);
+	bool				operator>(const Fixed &overload) const;
+	bool				operator<(const Fixed &overload) const;
+	bool				operator>=(const Fixed &overload) const;
+	bool				operator<=(const Fixed &overload) const;
+	bool				operator==(const Fixed &overload) const;
+	bool				operator!=(const Fixed &overload) const;
+	Fixed				operator+(const Fixed &overload);
+	Fixed				operator-(const Fixed &overload);
+	Fixed				operator*(const Fixed &overload);
+	Fixed				operator/(const Fixed &overload);
 	Fixed&				operator++();
-	Fixed&				operator--();
+	Fixed&				operator++(int);
 	static const Fixed&	max(const Fixed &f1, const Fixed &f2);
 	static Fixed&		max(Fixed &f1, Fixed &f2);
 	int					getRawBits(void) const;
@@ -49,5 +49,7 @@ class Fixed {
 	int		toInt(void)const;
 	
 };
+
+std::ostream& operator<<(std::ostream &out, const Fixed &fixed);
 
 #endif
