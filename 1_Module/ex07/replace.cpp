@@ -6,7 +6,7 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/29 13:36:27 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/07/29 14:31:11 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/09/30 21:43:09 by wester        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,18 +28,17 @@ bool fexists1(std::string fname)
 int         main(int argc, char **argv)
 {
     std::ifstream f;
-    std::ofstream new_file("new_text.txt");
     std::string line;
     size_t pos;
 
     if (argc != 4)
     {
-        std::cout << "not right amount of arguments" << std::endl;
+        std::cout << "Not right amount of arguments" << std::endl;
         return -1;
     }
-    if (!argv[2] || !argv[3])
+    if (!argv[2] || !argv[3] || !argv[2][0] || !argv[3][0])
     {
-        std::cout << "one  or both strings were emmpty" << std::endl;
+        std::cout << "One or both strings were empty" << std::endl;
         return -1;
     }
     if (!fexists1(argv[1]))
@@ -50,18 +49,33 @@ int         main(int argc, char **argv)
     f.open(argv[1]);
     if (f.is_open())
     {
-        while (getline(f, line))
-        {
+        if (getline(f, line)){
+            std::ofstream new_file("FILENAME.replace");
             pos = line.find(argv[2]);
             while (pos != std::string::npos)
             {
-                pos = line.find(argv[2]);
-                if (pos != std::string::npos)
+                if (pos != std::string::npos){
                     line.replace(pos, strlen(argv[2]), argv[3]);
+                }
+                pos = line.find(argv[2], pos + 1);
             }
+            new_file << line << std::endl;
+            while (getline(f, line))
+            {
+                pos = line.find(argv[2]);
+                while (pos != std::string::npos)
+                {
+                    if (pos != std::string::npos){
+                        line.replace(pos, strlen(argv[2]), argv[3]);
+                    }
+                    pos = line.find(argv[2], pos + 1);
+                }
                 new_file << line << std::endl;
+            }
+            new_file.close();
         }
-        new_file.close();
+        else 
+            std::cout << "file was empty or didn't give me an actually file." << std::endl;
     }
     return 0; 
 }
