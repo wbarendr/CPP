@@ -6,7 +6,7 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/03 17:26:06 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/08/04 18:09:51 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/09/28 11:52:01 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
-#include <iostream>
-#include <string>
 
 class NinjaTrap : public virtual ClapTrap{
   protected:
@@ -27,7 +25,7 @@ class NinjaTrap : public virtual ClapTrap{
     NinjaTrap(std::string name);
     NinjaTrap(const NinjaTrap& other);
 		NinjaTrap&		operator=(const NinjaTrap &overload);
-    ~NinjaTrap();
+    virtual ~NinjaTrap();
     void rangedAttack(std::string const& target);
     void meleeAttack(std::string const& target);
     void ninjaShoebox(ClapTrap& other);

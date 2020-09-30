@@ -6,7 +6,7 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/03 13:31:53 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/09/04 15:22:06 by Wester        ########   odam.nl         */
+/*   Updated: 2020/09/28 12:36:43 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@ MateriaSource::MateriaSource(){
     for (int i = 0; i < 4; i++) {
         _materia[i] = NULL;
     }
-};
+}
 
 MateriaSource::MateriaSource(const MateriaSource& other) {
     *this = other;
-};
+}
 
 MateriaSource& MateriaSource::operator=(const MateriaSource& other) {
 
@@ -28,9 +28,9 @@ MateriaSource& MateriaSource::operator=(const MateriaSource& other) {
         _materia[i] = other._materia[i];
     }
     return *this;
-};
+}
 
-MateriaSource::~MateriaSource() {};
+MateriaSource::~MateriaSource() {}
 
 void MateriaSource::learnMateria(AMateria* materia) {
     int i = 0;
@@ -45,7 +45,7 @@ void MateriaSource::learnMateria(AMateria* materia) {
         _materia[i] = materia;
     else
         std::cout << "MateriaSource slots are full" << std::endl;
-};
+}
 
 AMateria* MateriaSource::createMateria(std::string const& type) {
 
@@ -56,4 +56,4 @@ AMateria* MateriaSource::createMateria(std::string const& type) {
     else if (type == "fire")
         return new Fire();
     return NULL;
-};
+}

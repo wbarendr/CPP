@@ -6,7 +6,7 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/03 12:55:59 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/08/04 16:34:46 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/09/28 11:46:15 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ ScavTrap::ScavTrap(){
 	Ranged_attack_damage = 15;
 	Armor_damage_reduction = 3;
 	std::cout << "Making a Scav" << std::endl;
-};
+}
 
 ScavTrap::ScavTrap(std::string name){
 	Hit_Points = 100;
@@ -52,11 +52,11 @@ ScavTrap&	ScavTrap::operator=(const ScavTrap& overload){
 	Ranged_attack_damage = overload.Ranged_attack_damage;
 	Armor_damage_reduction = overload.Armor_damage_reduction;
 	return *this;
-};
+}
 
 ScavTrap::~ScavTrap(){
 	std::cout << "Destroyer of scav" << std::endl;
-};
+}
 
 void    ScavTrap::rangedAttack(std::string const& target){
 	if (hitPoints() == 0){

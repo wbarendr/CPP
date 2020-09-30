@@ -6,7 +6,7 @@
 /*   By: Wester <Wester@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/05 17:32:32 by Wester        #+#    #+#                 */
-/*   Updated: 2020/08/06 14:29:35 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/09/28 12:20:26 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,7 @@ class Sorcerer {
     std::string   getName()const ;
     std::string   getTitle()const ;
 };
+
+std::ostream&   operator<<(std::ostream& stream, const Sorcerer& other);
 
 #endif

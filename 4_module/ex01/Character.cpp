@@ -6,7 +6,7 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/07 12:46:47 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/09/04 13:31:29 by Wester        ########   odam.nl         */
+/*   Updated: 2020/09/28 12:25:18 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,15 @@ Character::Character(std::string const& name){
     _apMax = 40;
     _AP = _apMax;
     _gun = NULL;
-};
+}
 
 Character::~Character(){
     // std::cout << "* SPROTCH *" << std::endl;
-};
+}
 
 Character::Character(const Character& other){
 	*this = other;
-};
+}
 
 Character&    Character::operator=(const Character& other){
 	_name = other._name;
@@ -70,4 +70,13 @@ int              Character::getAP() const{
 
 AWeapon*         Character::getWeapon() const{
     return _gun;
+}
+
+std::ostream& operator<<(std::ostream& stream, const Character& other)
+{
+    if (other.getWeapon() != NULL)
+	    stream << other.getName() << " has " << other.getAP() << " AP and wields a " << other.getWeapon()->getName() <<  std::endl;
+    else 
+        stream << other.getName() << " has " << other.getAP() << " AP and is unarmed" << std::endl;
+	return stream;
 }

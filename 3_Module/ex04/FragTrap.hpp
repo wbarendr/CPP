@@ -6,7 +6,7 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/01 11:43:56 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/08/04 18:09:44 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/09/28 11:53:08 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 # define _FRAGTRAP_HPP_
 
 #include "ClapTrap.hpp"
-#include <iostream>
-#include <string>
 
 class FragTrap : public virtual ClapTrap{
   public:
@@ -23,7 +21,7 @@ class FragTrap : public virtual ClapTrap{
     FragTrap(std::string name);
     FragTrap(const FragTrap& other);
     FragTrap&		operator=(const FragTrap &overload);
-    ~FragTrap();
+    virtual ~FragTrap();
     void rangedAttack(std::string const& target);
     void meleeAttack(std::string const& target);
     void vaulthunter_dot_exe(std::string const& target);

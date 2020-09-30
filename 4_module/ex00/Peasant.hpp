@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   peasant.hpp                                        :+:    :+:            */
+/*   Peasant.hpp                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/03 16:13:03 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/09/03 16:13:47 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/09/28 12:11:36 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 class Peasant : public virtual Victim{
   public:
-    ~Peasant();
+    virtual ~Peasant();
     Peasant(std::string _name);
     Peasant(const Peasant& other);
     Peasant& operator=(const Peasant& other);

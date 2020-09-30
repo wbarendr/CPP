@@ -6,7 +6,7 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/02 14:12:12 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/09/04 15:20:16 by Wester        ########   odam.nl         */
+/*   Updated: 2020/09/28 12:38:54 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,3 +53,23 @@ int main()
     delete src;
     return 0;
 }
+
+// int main()
+// {
+// IMateriaSource* src = new MateriaSource();
+// src->learnMateria(new Ice());
+// src->learnMateria(new Cure());
+// ICharacter* me = new Character("me");
+// AMateria* tmp;
+// tmp = src->createMateria("ice");
+// me->equip(tmp);
+// tmp = src->createMateria("cure");
+// me->equip(tmp);
+// ICharacter* bob = new Character("bob");
+// me->use(0, *bob);
+// me->use(1, *bob);
+// delete bob;
+// delete me;
+// delete src;
+// return 0;
+// }

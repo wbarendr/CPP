@@ -6,15 +6,13 @@
 /*   By: Wester <Wester@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/04 14:43:10 by Wester        #+#    #+#                 */
-/*   Updated: 2020/09/04 14:43:44 by Wester        ########   odam.nl         */
+/*   Updated: 2020/09/28 12:35:17 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef _FIRE_HPP_
 # define _FIRE_HPP_
 
-# include <string>
-# include <iostream>
 # include "ICharacter.hpp"
 # include "AMateria.hpp"
 

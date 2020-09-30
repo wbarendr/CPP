@@ -6,7 +6,7 @@
 /*   By: Wester <Wester@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/11 11:27:34 by Wester        #+#    #+#                 */
-/*   Updated: 2020/09/23 14:27:46 by wester        ########   odam.nl         */
+/*   Updated: 2020/09/28 10:03:05 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ bool        find_num(std::string str){
 
 void        print_char(int num){
 	if (isprint(num))
-		std::cout << "char " << static_cast<char>(num) << std::endl;
+		std::cout << "char: \'" << static_cast<char>(num) << "\'" << std::endl;
 	else
 		std::cout << "char: Non displayable" << std::endl;
 }
@@ -50,7 +50,7 @@ void        convert_float(std::string str){
 		std::cout << "double: " << str << std::endl;
 	}
 	float fl = std::stof(str);
-		
+
 	print_char(static_cast<int>(fl));
 	std::cout << "int: " << static_cast<int>(fl) << std::endl;
 	std::cout << "float: " << str << std::endl;

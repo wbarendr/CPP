@@ -6,15 +6,13 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/07 10:55:20 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/08/31 17:36:41 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/09/28 12:26:16 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef _PLASMARIFLE_HPP_
 # define _PLASMARIFLE_HPP_
 
-# include <iostream>
-# include <string>
 # include "AWeapon.hpp"
 
 class PlasmaRifle : public virtual AWeapon{

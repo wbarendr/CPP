@@ -1,20 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   nakedMoleRat.hpp                                   :+:    :+:            */
+/*   NakedMoleRat.hpp                                   :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: Wester <Wester@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/04 14:07:18 by Wester        #+#    #+#                 */
-/*   Updated: 2020/09/04 14:07:49 by Wester        ########   odam.nl         */
+/*   Updated: 2020/09/28 12:29:40 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef _NAKEDMOLERAT_HPP_
 # define _NAKEDMOLERAT_HPP_
 
-# include <iostream>
-# include <string>
 # include "ISpaceMarine.hpp"
 
 class NakedMoleRat : public ISpaceMarine

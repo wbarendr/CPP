@@ -6,7 +6,7 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/31 17:04:06 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/09/02 12:35:15 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/09/28 12:28:04 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 AssaultTerminator::AssaultTerminator(){
 	std::cout <<  "* teleports from space *" << std::endl;
-};
+}
 
 AssaultTerminator::~AssaultTerminator(){
 	std::cout <<  "I\'ll be back..." << std::endl;
-};
+}
 
 AssaultTerminator::AssaultTerminator( const AssaultTerminator& other){
 	std::cout <<  "* teleports from space *" << std::endl;

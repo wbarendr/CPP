@@ -6,7 +6,7 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/07 13:34:42 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/09/03 17:13:37 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/09/28 12:25:58 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,6 @@
 # include "Character.hpp"
 # include "RadScorpion.hpp"
 # include "Embarrass.hpp"
-
-
-std::ostream& operator<<(std::ostream& stream, const Character& other)
-{
-    if (other.getWeapon() != NULL)
-	    stream << other.getName() << " has " << other.getAP() << " AP and wields a " << other.getWeapon()->getName() <<  std::endl;
-    else 
-        stream << other.getName() << " has " << other.getAP() << " AP and is unarmed" << std::endl;
-	return stream;
-};
 
 int main()
 {
@@ -57,7 +47,7 @@ int main()
     me->attack(b);
     std::cout << *me;
     
-    while(1);
+    // while(1);
     
     return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/03 15:28:06 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/08/04 16:55:30 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/09/28 11:50:08 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ ClapTrap::ClapTrap(){
 	Melee_attack_damage = 0;
 	Ranged_attack_damage = 0;
 	Armor_damage_reduction = 0;
-};
+}
 
 ClapTrap::ClapTrap(std::string name){
 	std::cout << "Making a claptrap & naming it" << std::endl;
@@ -52,11 +52,11 @@ ClapTrap&	ClapTrap::operator=(const ClapTrap& overload){
 	Ranged_attack_damage = overload.Ranged_attack_damage;
 	Armor_damage_reduction = overload.Armor_damage_reduction;
 	return *this;
-};
+}
 
 ClapTrap::~ClapTrap(){
 	std::cout << "Destroyer of claptrap" << std::endl;
-};
+}
 
 void	ClapTrap::giveName(std::string name){
 	Name = name;

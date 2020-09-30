@@ -6,7 +6,7 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/01 13:09:35 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/09/02 12:39:36 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/09/28 12:29:51 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 Squad::Squad(){
 	_count = 0;
 	_soldiers = NULL;
-};
+}
 
 Squad::Squad(const Squad& other){
 	this->_count = other._count;

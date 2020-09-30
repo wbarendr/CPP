@@ -6,14 +6,13 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/01 10:41:41 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/09/25 15:05:32 by wester        ########   odam.nl         */
+/*   Updated: 2020/09/28 17:59:20 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-int
-main(void)
+int         main(void)
 {
     Fixed       a;
     Fixed const b( 10 );

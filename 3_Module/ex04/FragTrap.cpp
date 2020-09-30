@@ -6,7 +6,7 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/01 11:51:07 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/08/04 18:12:32 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/09/28 11:50:31 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ FragTrap::FragTrap(){
 	Max_Hit_Points = 100;
 	Armor_damage_reduction = 5;
     Ranged_attack_damage = 20;
-};
+}
 
 FragTrap::FragTrap(std::string name){
 	std::cout << "Constructing FragTrap && naming it" << std::endl;
@@ -58,7 +58,7 @@ unsigned int	FragTrap::get_max_hit(){ return Max_Hit_Points; }
 
 FragTrap::~FragTrap(){
 	std::cout << "Destructing FragTrap" << std::endl;
-};
+}
 
 void    FragTrap::rangedAttack(std::string const& target){
 	if (hitPoints() == 0){
@@ -100,4 +100,3 @@ void	FragTrap::vaulthunter_dot_exe(std::string const& target){
 	std::cout << this->takeName() << attacks[num] << " of " << target << std::endl;
 	changeEnergy(-25);
 }
-

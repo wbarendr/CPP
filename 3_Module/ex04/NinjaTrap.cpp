@@ -6,7 +6,7 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/03 17:27:07 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/08/04 17:59:55 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/09/28 11:51:48 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ NinjaTrap::NinjaTrap(){
 	// Melee_attack_damage = 60;
 	Ranged_attack_damage = 5;
 	Armor_damage_reduction = 0;
-};
+}
 
 NinjaTrap::NinjaTrap(std::string name){
 	std::cout << "Making a Ninja & naming it" << std::endl;
@@ -49,7 +49,7 @@ NinjaTrap::NinjaTrap(std::string name){
 	this->giveName(name);
 	Melee_attack_damage = 60;
 	Ranged_attack_damage = 5;
-};
+}
 
 NinjaTrap::NinjaTrap(const NinjaTrap& other){
 	std::cout << "hello copy" << std::endl;
@@ -76,7 +76,7 @@ unsigned int	NinjaTrap::get_energy(){ return Energy_Points; }
 
 NinjaTrap::~NinjaTrap(){
 	std::cout << "Destroyer of Ninja!" << std::endl;
-};
+}
 
 void    NinjaTrap::rangedAttack(std::string const& target){
 	if (hitPoints() == 0){

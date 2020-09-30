@@ -6,15 +6,13 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/01 11:41:33 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/09/01 12:46:35 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/09/28 12:30:13 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef _TACTICALMARINE_HPP_
 # define _TACTICALMARINE_HPP_
 
-# include <iostream>
-# include <string>
 # include "ISpaceMarine.hpp"
 
 class TacticalMarine : public ISpaceMarine

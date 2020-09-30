@@ -6,7 +6,7 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/29 19:50:32 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/09/25 14:57:45 by wester        ########   odam.nl         */
+/*   Updated: 2020/09/28 17:59:37 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,8 @@ class Fixed {
 	int		toInt(void)const;
 	
 };
+
+std::ostream&       operator<<(std::ostream& stream, const Fixed& other);
+
 
 #endif
