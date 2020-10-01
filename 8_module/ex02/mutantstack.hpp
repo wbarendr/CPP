@@ -6,7 +6,7 @@
 /*   By: wester <wester@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/25 10:02:48 by wester        #+#    #+#                 */
-/*   Updated: 2020/09/25 10:22:17 by wester        ########   odam.nl         */
+/*   Updated: 2020/10/01 10:41:24 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,21 +31,21 @@ class MutantStack : public std::stack<T>
 	};
 	~MutantStack(){};
 	
-	void    				push(T data){
-		_list.push_front(data);
-	}
+	// void    				push(T data){
+	// 	_list.push_front(data);
+	// }
 	
-	void    				pop(void){
-		_list.pop_front();
-	}
+	// void    				pop(void){
+	// 	_list.pop_front();
+	// }
 	
-	T           			size(void){
-		return _list.size();
-	}
+	// T           			size(void){
+	// 	return _list.size();
+	// }
 	
-	T						top(){
-		return _list.front();
-	}
+	// T						top(){
+	// 	return _list.front();
+	// }
 	
 	typedef std::list<int>::iterator iterator;
 	

@@ -6,7 +6,7 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/03 15:28:06 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/09/28 11:50:08 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/10/01 12:58:14 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,7 @@ void	ClapTrap::changeEnergy(unsigned int num){
 		std::cout << Name << " has full Energy!!!" << std::endl;
 	}
 	else
-		Energy_Points += num;
+		Energy_Points += (int)num;
 }
 
 int		ClapTrap::energyPoints(){

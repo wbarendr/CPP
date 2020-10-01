@@ -6,7 +6,7 @@
 /*   By: wester <wester@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/24 22:50:02 by wester        #+#    #+#                 */
-/*   Updated: 2020/09/25 10:02:37 by wester        ########   odam.nl         */
+/*   Updated: 2020/10/01 10:46:19 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ class Span
 	Span(const Span& other);
 	Span&			operator=(const Span& other);
 	~Span();
+	void			addNumber2(int* arr);
 	void        	addNumber(int num);
 	unsigned int	shortestSpan();
 	unsigned int	longestSpan();

@@ -6,7 +6,7 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/03 14:42:22 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/09/28 11:50:54 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/10/01 12:58:32 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ int     main(void)
     zero.takeDamage(40);
     
     zero.print_vars();
+    std::cout << std::endl;
     zero.rangedAttack("henk");
     
     return 0;
