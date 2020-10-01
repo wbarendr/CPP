@@ -6,7 +6,7 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/01 12:50:58 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/09/28 12:32:10 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/10/01 15:07:02 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,7 @@
 #include "AssaultTerminator.hpp"
 #include "NakedMoleRat.hpp"
 
-int main()
-{
+void    call_function(void){
     ISpaceMarine* Bob = new TacticalMarine;
     ISpaceMarine* Jim = new AssaultTerminator;
     ISpaceMarine* Kees = new TacticalMarine;
@@ -44,23 +43,30 @@ int main()
     }
     delete vlc;
     
-    return 0;
 }
 
-// int main()
-// {
-//     ISpaceMarine* bob = new TacticalMarine;
-//     ISpaceMarine* jim = new AssaultTerminator;
-//     ISquad* vlc = new Squad;
-//     vlc->push(bob);
-//     vlc->push(jim);
-//     for (int i = 0; i < vlc->getCount(); ++i)
-//     {
-//         ISpaceMarine* cur = vlc->getUnit(i);
-//         cur->battleCry();
-//         cur->rangedAttack();
-//         cur->meleeAttack();
-//     }
-//     delete vlc;
-//     return 0;
-// }
+void    call_function1()
+{
+    ISpaceMarine* bob = new TacticalMarine;
+    ISpaceMarine* jim = new AssaultTerminator;
+    ISquad* vlc = new Squad;
+    vlc->push(bob);
+    vlc->push(jim);
+    for (int i = 0; i < vlc->getCount(); ++i)
+    {
+        ISpaceMarine* cur = vlc->getUnit(i);
+        cur->battleCry();
+        cur->rangedAttack();
+        cur->meleeAttack();
+    }
+    delete vlc;
+}
+
+int main()
+{
+    // call_function();
+    call_function1();
+    system("leaks a.out | grep bytes");
+
+    return 0;
+}

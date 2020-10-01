@@ -6,7 +6,7 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/03 13:31:53 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/09/28 12:36:43 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/10/01 14:45:00 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,10 @@ MateriaSource& MateriaSource::operator=(const MateriaSource& other) {
     return *this;
 }
 
-MateriaSource::~MateriaSource() {}
+MateriaSource::~MateriaSource() {
+    for (int i = 0; _materia[i] != NULL; ++i)
+        delete _materia[i];
+}
 
 void MateriaSource::learnMateria(AMateria* materia) {
     int i = 0;

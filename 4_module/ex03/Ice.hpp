@@ -6,7 +6,7 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/02 14:51:28 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/09/28 12:35:30 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/10/01 14:21:16 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Ice : public AMateria
 	Ice();
 	Ice(const Ice& other);
 	Ice& 				operator=(const Ice& other);
-	~Ice();
+	virtual ~Ice();
 	AMateria* 		clone() const;
 	void 			use(ICharacter& target);
 };

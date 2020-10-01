@@ -6,14 +6,14 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/02 14:50:22 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/09/28 12:35:24 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/10/01 14:28:43 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Ice.hpp"
 
-Ice::Ice() : AMateria("ice"){
-    // AMateria("ice");
+Ice::Ice() : 
+    AMateria("ice"){
 }
 
 Ice::Ice(const Ice& other){
@@ -30,7 +30,6 @@ Ice::~Ice(){}
 
 AMateria*           Ice::clone() const{
     AMateria* clone = new Ice();
-    // clone = this;
     return clone;
 }
 

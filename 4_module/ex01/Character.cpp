@@ -6,7 +6,7 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/07 12:46:47 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/09/28 12:25:18 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/10/01 15:13:28 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Character::Character(std::string const& name){
 }
 
 Character::~Character(){
-    // std::cout << "* SPROTCH *" << std::endl;
+    // delete _gun;
 }
 
 Character::Character(const Character& other){

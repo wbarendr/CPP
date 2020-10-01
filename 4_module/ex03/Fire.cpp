@@ -6,14 +6,14 @@
 /*   By: Wester <Wester@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/04 14:19:20 by Wester        #+#    #+#                 */
-/*   Updated: 2020/09/28 12:35:08 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/10/01 15:02:40 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fire.hpp"
 
-Fire::Fire() : AMateria("Fire"){
-    // AMateria("fire!!");
+Fire::Fire() : 
+    AMateria("Fire"){
 }
 
 Fire::Fire(const Fire& other){

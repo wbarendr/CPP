@@ -6,7 +6,7 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/07 13:34:42 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/09/28 12:25:58 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/10/01 15:25:11 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,18 @@
 # include "Character.hpp"
 # include "RadScorpion.hpp"
 # include "Embarrass.hpp"
+# include "SuperMutant.hpp"
 
-int main()
+
+void        call_function(void)
 {
     Character* me = new Character("me");
     
     std::cout << *me;
     
     Enemy* b = new RadScorpion();
+    
+    Enemy* bad = new SuperMutant();
     
     AWeapon* pr = new PlasmaRifle();
     AWeapon* pf = new PowerFist();
@@ -46,8 +50,53 @@ int main()
     std::cout << *me;
     me->attack(b);
     std::cout << *me;
+    me->attack(b);
+    std::cout << *me;
+    me->attack(bad);
+    std::cout << *me;
     
-    // while(1);
+    delete me;
+    delete pr;
+    delete pf;
+    delete pl;
+    delete bad;
+}
+
+void        call_function1(void)
+{
+    Character* me = new Character("me");
     
+    std::cout << *me;
+    
+    Enemy* b = new RadScorpion();
+    
+    AWeapon* pr = new PlasmaRifle();
+    AWeapon* pf = new PowerFist();
+    
+    me->equip(pr);
+    std::cout << *me;
+    me->equip(pf);
+    
+    me->attack(b);
+    std::cout << *me;
+    me->equip(pr);
+    std::cout << *me;
+    me->attack(b);
+    std::cout << *me;
+    me->attack(b);
+    std::cout << *me;
+
+    delete me;
+
+    delete pr;
+    delete pf;
+}
+
+int main()
+{
+    // call_function();
+    call_function1();
+    system("leaks a.out | grep bytes");
+
     return 0;
 }

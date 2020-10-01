@@ -6,7 +6,7 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/02 15:16:37 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/09/28 12:33:01 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/10/01 14:52:23 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,9 @@ std::string const&			Character::getName(void) const{
 }
 
 void						Character::equip(AMateria* m){
+	if (num == 4){
+		delete m;
+	}
 	if (!m || num == 4)
 		return ;
 	_materia[num] = m;
