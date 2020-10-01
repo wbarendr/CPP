@@ -6,7 +6,7 @@
 /*   By: Wester <Wester@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/11 11:27:34 by Wester        #+#    #+#                 */
-/*   Updated: 2020/09/28 10:03:05 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/10/01 17:55:58 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,23 @@
 #include <iomanip>
 
 bool        find_dot(std::string str){
+	int count = 0;
+	char* str2 = "0123456789";
+	int not_num = 0;
 	for (int i = 0; str[i]; ++i){
 		if (str[i] == '.')
-			return true;
+			count++;
+		else {
+			for (int j = 0; str2[j]; ++j){
+				if (str2[j] != str[i])
+					not_num++;
+			}
+			if (not_num == 9)
+				not_num = 0;
+		}
 	}
+	if (count == 1 && not_num == 0)
+		return true;
 	if (str == "+inf" || str == "-inf" || str == "nan")
 		return true;
 	return false;
@@ -48,8 +61,10 @@ void        convert_float(std::string str){
 		std::cout << "float: " << str << std::endl;
 		str.back() = 0;
 		std::cout << "double: " << str << std::endl;
+		return ;
 	}
 	float fl = std::stof(str);
+	std::cout << "num  " << fl << std::endl;
 
 	print_char(static_cast<int>(fl));
 	std::cout << "int: " << static_cast<int>(fl) << std::endl;
@@ -69,7 +84,6 @@ void        convert_double(std::string str){
 	}
 	
 	long double db = std::stof(str);
-	
 	print_char(static_cast<int>(db));
 	std::cout << "int: " << static_cast<int>(db) << std::endl;
 	std::cout << "float: " << std::setprecision(str.length()) << str << "f" << std::endl;
@@ -96,8 +110,12 @@ void		convert_char(std::string str){
 		
 }
 
+void		find_float(std::string str){
+	str.back() == 'f' && str[1] != 0 && str != "+inf" && str != "-inf")
+}
+
 void        find_type(std::string str){
-	if (str.back() == 'f' && str[1] != 0 && str != "+inf" && str != "-inf")
+	if (find_float(str)  //
 		convert_float(str);
 	else if (find_dot(str))
 		convert_double(str);
