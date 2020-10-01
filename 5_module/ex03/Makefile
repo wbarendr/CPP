@@ -6,9 +6,14 @@
 #    By: wbarendr <wbarendr@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/10/01 16:55:53 by wbarendr      #+#    #+#                  #
-#    Updated: 2020/10/01 16:55:55 by wbarendr      ########   odam.nl          #
+#    Updated: 2020/10/01 17:10:17 by wbarendr      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
+
+RD = "\x1b[31;01"
+GR = "\x1b[32;01m"
+YL = "\x1b[33;01m"
+NO = "\x1b[0m"
 
 NAME = execute
 
@@ -24,7 +29,7 @@ $(NAME):
 	@echo "A bit of [tree] installing if necessary..."
 	@brew install tree
 	@$(CLANG) $(FLAGS) -o $(NAME) $(SRCS)
-	@echo "generated executable"
+	@echo $(GR) "generated executable" $(NO)
 
 clean:
 	rm -f *shrubbery
