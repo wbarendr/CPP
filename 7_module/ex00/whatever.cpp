@@ -6,7 +6,7 @@
 /*   By: wester <wester@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/21 12:01:29 by wester        #+#    #+#                 */
-/*   Updated: 2020/09/25 11:17:17 by wester        ########   odam.nl         */
+/*   Updated: 2020/10/02 11:05:39 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,8 @@
 
 template<typename T>
 void    swap(T& a, T& b){
-    T tmp;
+    T tmp = a;
     
-    tmp = a;
     a = b;
     b = tmp;
 }

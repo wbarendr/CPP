@@ -6,7 +6,7 @@
 /*   By: Wester <Wester@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/11 11:27:34 by Wester        #+#    #+#                 */
-/*   Updated: 2020/10/01 17:55:58 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/10/02 10:29:43 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,17 @@
 #include <stdlib.h>
 #include <iomanip>
 
-bool        find_dot(std::string str){
-	int count = 0;
-	char* str2 = "0123456789";
-	int not_num = 0;
+bool		allNumbersAndDot(std::string str){
 	for (int i = 0; str[i]; ++i){
-		if (str[i] == '.')
-			count++;
-		else {
-			for (int j = 0; str2[j]; ++j){
-				if (str2[j] != str[i])
-					not_num++;
-			}
-			if (not_num == 9)
-				not_num = 0;
-		}
+		i = str.find(".", i);
+		count++;
 	}
-	if (count == 1 && not_num == 0)
-		return true;
+}
+
+bool        find_double(std::string str){
 	if (str == "+inf" || str == "-inf" || str == "nan")
+		return true;
+	if (allNumberAndDot(str))
 		return true;
 	return false;
 }
@@ -117,7 +109,7 @@ void		find_float(std::string str){
 void        find_type(std::string str){
 	if (find_float(str)  //
 		convert_float(str);
-	else if (find_dot(str))
+	else if (find_double(str))
 		convert_double(str);
 	else if (find_num(str))
 		convert_int(str);
