@@ -6,7 +6,7 @@
 /*   By: Wester <Wester@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/04 14:07:18 by Wester        #+#    #+#                 */
-/*   Updated: 2020/09/28 12:29:40 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/10/02 11:42:55 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class NakedMoleRat : public ISpaceMarine
     NakedMoleRat();
     NakedMoleRat( const NakedMoleRat& other);
     NakedMoleRat& operator=(const NakedMoleRat* other);
-    ~NakedMoleRat();
+    virtual ~NakedMoleRat();
     NakedMoleRat* clone() const;
     void battleCry() const;
     void rangedAttack() const;

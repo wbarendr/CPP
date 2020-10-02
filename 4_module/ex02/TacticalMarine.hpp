@@ -6,7 +6,7 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/01 11:41:33 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/09/28 12:30:13 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/10/02 11:43:14 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class TacticalMarine : public ISpaceMarine
     TacticalMarine();
     TacticalMarine( const TacticalMarine& other);
     TacticalMarine& operator=(const TacticalMarine* other);
-    ~TacticalMarine();
+    virtual ~TacticalMarine();
     TacticalMarine* clone() const;
     void battleCry() const;
     void rangedAttack() const;

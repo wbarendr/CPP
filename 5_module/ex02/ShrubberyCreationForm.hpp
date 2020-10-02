@@ -6,7 +6,7 @@
 /*   By: Wester <Wester@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/09 18:15:20 by Wester        #+#    #+#                 */
-/*   Updated: 2020/09/09 19:58:23 by Wester        ########   odam.nl         */
+/*   Updated: 2020/10/02 11:50:29 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class ShrubberyCreationForm : public Form
     ShrubberyCreationForm(std::string target);
     ShrubberyCreationForm(const ShrubberyCreationForm& other);
     ShrubberyCreationForm&      operator=(const ShrubberyCreationForm& other);
-    ~ShrubberyCreationForm();
+    virtual ~ShrubberyCreationForm();
     void                        execute(Bureaucrat const & executor) const;
 };
 

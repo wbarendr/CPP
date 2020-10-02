@@ -6,7 +6,7 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/02 15:12:47 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/09/28 12:33:04 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/10/02 11:43:51 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class Character : public ICharacter
 	Character(std::string const& name);
 	Character(const Character& other);
 	Character& operator=(const Character& other);
-	~Character();
+	virtual ~Character();
 	
 	std::string const&          getName() const;
 	void 						equip(AMateria* m);

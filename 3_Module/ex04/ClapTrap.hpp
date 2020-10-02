@@ -6,7 +6,7 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/03 15:29:48 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/09/28 11:50:14 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/10/02 11:56:14 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ class ClapTrap
 	public:
 		ClapTrap();
 		ClapTrap(std::string name);
-		~ClapTrap();
+		virtual ~ClapTrap();
 		ClapTrap(const ClapTrap& other);
 		ClapTrap&		operator=(const ClapTrap &overload);
 		std::string   	takeName();

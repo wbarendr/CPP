@@ -6,7 +6,7 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/01 12:53:46 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/09/28 12:29:58 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/10/02 11:43:03 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ class Squad : public ISquad
 	Squad();
 	Squad(const Squad& other);
 	Squad& operator=(const Squad& other);
-	~Squad();
+	virtual ~Squad();
 	int                 push(ISpaceMarine* soldier);
 	int                 getCount() const;
 	ISpaceMarine*       getUnit(int num) const;

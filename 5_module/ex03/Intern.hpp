@@ -6,7 +6,7 @@
 /*   By: Wester <Wester@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/10 16:33:50 by Wester        #+#    #+#                 */
-/*   Updated: 2020/09/10 16:55:56 by Wester        ########   odam.nl         */
+/*   Updated: 2020/10/02 11:51:19 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class Intern
 	Intern();
 	Intern(const Intern& other);
 	Intern&		operator=(const Intern& other);
-	virtual ~Intern();
+	~Intern();
 	
 	Form*           makeForm(std::string form, std::string target);
 };
