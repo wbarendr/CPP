@@ -6,7 +6,7 @@
 /*   By: Wester <Wester@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/28 18:27:34 by Wester        #+#    #+#                 */
-/*   Updated: 2020/09/28 15:11:33 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/10/02 16:15:39 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,9 @@ ZombieHorde::~ZombieHorde()
 
 int         ZombieHorde::getNum(void) const{
     return _num;
+}
+
+void        ZombieHorde::announce(void){
+    for(int i = 0; i < _num; ++i)
+        _zombieTeam[i].announce();
 }

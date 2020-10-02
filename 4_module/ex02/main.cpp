@@ -6,7 +6,7 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/01 12:50:58 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/10/01 15:07:02 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/10/02 16:08:45 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ int main()
 {
     // call_function();
     call_function1();
-    system("leaks a.out | grep bytes");
+    // system("leaks a.out | grep bytes");
 
     return 0;
 }

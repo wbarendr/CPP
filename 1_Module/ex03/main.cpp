@@ -6,7 +6,7 @@
 /*   By: wester <wester@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/25 12:24:06 by wester        #+#    #+#                 */
-/*   Updated: 2020/09/28 14:59:36 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/10/02 16:15:22 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,7 @@
 void        make_zombies(void){
     ZombieHorde squad = ZombieHorde(5);
     
-    for(int i = 0; i < squad.getNum(); ++i)
-        squad.getZombieTeam(i).announce();
+    squad.announce();
 }
 
 int         main(void)

@@ -6,7 +6,7 @@
 /*   By: Wester <Wester@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/28 18:27:43 by Wester        #+#    #+#                 */
-/*   Updated: 2020/09/25 13:56:07 by wester        ########   odam.nl         */
+/*   Updated: 2020/10/02 16:13:54 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ class ZombieHorde
   public:
     ZombieHorde(int N);
     ~ZombieHorde();
+    void      announce();
     int       getNum() const;
     Zombie    getZombieTeam(int n);
 };
