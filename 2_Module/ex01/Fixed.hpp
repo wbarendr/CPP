@@ -6,7 +6,7 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/29 19:50:32 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/09/28 17:59:37 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/10/02 16:01:02 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,17 +23,17 @@ class Fixed {
 
   public:
 	Fixed();
-	~Fixed();
-	Fixed(const Fixed &object);
-	Fixed&				operator= (const Fixed &overload);
-	int					getRawBits(void) const;
-	void				setRawBits(int const raw);
-
 	Fixed(const int num);
 	Fixed(const float num);
-	float	toFloat(void) const;
-	int		toInt(void)const;
+	Fixed(const Fixed &object);
+	Fixed&				operator= (const Fixed &overload);
+	~Fixed();
+
+	int					getRawBits(void) const;
+	void				setRawBits(int const raw);
 	
+	int		toInt(void)const;
+	float	toFloat(void) const;
 };
 
 std::ostream&       operator<<(std::ostream& stream, const Fixed& other);

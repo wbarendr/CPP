@@ -6,19 +6,26 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/29 19:50:30 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/09/28 17:59:31 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/10/02 16:01:41 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
+#include <cmath>
 
 Fixed::Fixed(void){
     std::cout << "Default" << std::endl;
     this->fixed_point_value = 0;
 }
 
-Fixed::~Fixed(void){
-    std::cout << "Destructor" << std::endl;
+Fixed::Fixed(const int num){
+	std::cout << "Int constructor called" << std::endl;
+	this->fixed_point_value = num << literal;
+}
+
+Fixed::Fixed(const float num){
+	std::cout << "Float constructor called" << std::endl;
+	this->fixed_point_value = roundf(num * (1 << literal));
 }
 
 Fixed::Fixed(const Fixed &object){
@@ -32,6 +39,10 @@ Fixed&  Fixed::operator= (const Fixed &overload){
     return *this;
 }
 
+Fixed::~Fixed(void){
+    std::cout << "Destructor" << std::endl;
+}
+
 int     Fixed::getRawBits(void) const{
     return this->fixed_point_value;
 }
@@ -41,15 +52,6 @@ void	Fixed::setRawBits(int const raw){
     this->fixed_point_value = raw;
 }
 
-Fixed::Fixed(const int num){
-	std::cout << "Int constructor called" << std::endl;
-	this->fixed_point_value = num << literal;
-}
-
-Fixed::Fixed(const float num){
-	std::cout << "Float constructor called" << std::endl;
-	this->fixed_point_value = num * (1 << literal);
-}
 
 float	Fixed::toFloat(void) const{
 	return (float)this->fixed_point_value / (1 << literal);
