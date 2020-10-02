@@ -6,23 +6,47 @@
 /*   By: Wester <Wester@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/04 15:48:23 by Wester        #+#    #+#                 */
-/*   Updated: 2020/09/09 15:22:46 by Wester        ########   odam.nl         */
+/*   Updated: 2020/10/02 14:02:50 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::GradeTooHighException::GradeTooHighException(void):
-	std::runtime_error("Throwing the exception because the grade is to high^^^")
+Bureaucrat::GradeTooHighException::GradeTooHighException(void)
 {}
+
+Bureaucrat::GradeTooHighException::GradeTooHighException(const GradeTooHighException& other){
+	*this = other; 
+}
+
+Bureaucrat::GradeTooHighException& Bureaucrat::GradeTooHighException::operator=(const GradeTooHighException& other){
+	static_cast <void> (other);
+	return *this;
+}
 
 Bureaucrat::GradeTooHighException::~GradeTooHighException(void) throw() {}
 
-Bureaucrat::GradeTooLowException::GradeTooLowException(void):
-	std::runtime_error("Throwing the exception because grade is low, low, low")
+const char*			Bureaucrat::GradeTooHighException::what(void) const throw(){
+	return "Throwing the exception because the grade is to high^^^";
+}
+
+Bureaucrat::GradeTooLowException::GradeTooLowException(void)
 {}
 
+Bureaucrat::GradeTooLowException::GradeTooLowException(const GradeTooLowException& other){
+	*this = other; 
+}
+
+Bureaucrat::GradeTooLowException& Bureaucrat::GradeTooLowException::operator=(const GradeTooLowException& other){
+	static_cast <void> (other);
+	return *this;
+}
+
 Bureaucrat::GradeTooLowException::~GradeTooLowException(void) throw() {}
+
+const char*			Bureaucrat::GradeTooLowException::what(void) const throw(){
+	return "Throwing the exception because the grade is to Low-low-loooo^^^";
+}
 
 Bureaucrat::Bureaucrat() {}
 

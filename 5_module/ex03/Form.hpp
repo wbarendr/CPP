@@ -6,7 +6,7 @@
 /*   By: Wester <Wester@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/09 14:15:35 by Wester        #+#    #+#                 */
-/*   Updated: 2020/09/10 12:23:12 by Wester        ########   odam.nl         */
+/*   Updated: 2020/10/02 14:22:30 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,15 +42,22 @@ class Form
 
 	virtual void		execute(Bureaucrat const & executor) const;
 	
-	class GradeTooLowException : public std::runtime_error {
+	class GradeTooLowException : public std::exception {
 	  public:
-	  	GradeTooLowException();
-	  	virtual ~GradeTooLowException() throw();
+		GradeTooLowException();
+		GradeTooLowException(const GradeTooLowException& other);
+		GradeTooLowException& 		operator=(const GradeTooLowException& other);
+		virtual ~GradeTooLowException() throw();
+		virtual const char    		*what() const throw();
 	};
-	class NotSignedException : public std::runtime_error {
+	
+	class NotSignedException : public std::exception {
 	  public:
-	  	NotSignedException();
-	  	virtual ~NotSignedException() throw();
+		NotSignedException();
+		NotSignedException(const NotSignedException& other);
+		NotSignedException& 		operator=(const NotSignedException& other);
+		virtual ~NotSignedException() throw();
+		virtual const char    		*what() const throw();
 	};
 };
 

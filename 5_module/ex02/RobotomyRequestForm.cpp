@@ -6,12 +6,13 @@
 /*   By: Wester <Wester@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/09 19:57:05 by Wester        #+#    #+#                 */
-/*   Updated: 2020/09/10 12:58:22 by Wester        ########   odam.nl         */
+/*   Updated: 2020/10/02 15:20:15 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
 #include <ctime>
+#include <cstdlib>
 
 RobotomyRequestForm::RobotomyRequestForm():
 	Form("Presidential Pardon Form", 72, 45)

@@ -6,7 +6,7 @@
 /*   By: Wester <Wester@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/09 12:57:47 by Wester        #+#    #+#                 */
-/*   Updated: 2020/09/10 17:23:26 by Wester        ########   odam.nl         */
+/*   Updated: 2020/10/02 14:23:15 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,7 @@
 #include "RobotomyRequestForm.hpp"
 #include "Intern.hpp"
 
-int         main(void)
-{
+void		call_function(){
 	std::cout << "wester:" << std::endl;
 	try {
 		Bureaucrat wester("wessa_b", 100);
@@ -111,20 +110,41 @@ int         main(void)
 		one->execute(Obama);
 		two->execute(Obama);
 		three->execute(Obama);
+		delete one;
+		delete two;
+		delete three;
 	}
 	catch (const std::exception& error){
 		std::cout << error.what() << std::endl;
 	}
 
-	std::cout << std::endl << "new:: -> forms:: -> Interns:" << std::endl;
+	std::cout << std::endl << "new:: -> forms:: -> Interns:" << std::endl << std::endl;
 	
 	Intern 	koffie;
 	Form	*Papers;
 
-	Papers = koffie.makeForm("paper request", "Bender");
 	Papers = koffie.makeForm("robotomy request", "Bender");
+	if (Papers == NULL)
+		std::cout << "yesyesyes" << std::endl;
+	else
+		std::cout << "check name here: >>> " << Papers->getName() << std::endl << std::endl;
+
+		
 	Papers = koffie.makeForm("shrubbery creation", "Bender");
 	Papers = koffie.makeForm("presidential pardon", "Bender");
+	
+	std::cout << std::endl;
+	Papers = koffie.makeForm("paper request", "Bender");
+	if (Papers == NULL)
+		std::cout << "form doesn't exist" << std::endl;
+	else
+		std::cout << "check name here: >>> " << Papers->getName() << std::endl;
+	
+}
 
+int         main(void)
+{
+	call_function();
+	// system("leaks execute | grep bytes");
 	return 0;
 }

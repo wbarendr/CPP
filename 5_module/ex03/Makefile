@@ -6,7 +6,7 @@
 #    By: wbarendr <wbarendr@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/10/01 16:55:53 by wbarendr      #+#    #+#                  #
-#    Updated: 2020/10/01 17:10:17 by wbarendr      ########   odam.nl          #
+#    Updated: 2020/10/02 14:54:17 by wbarendr      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,8 +26,8 @@ SRCS = *.cpp
 all: $(NAME)
 
 $(NAME):
-	@echo "A bit of [tree] installing if necessary..."
-	@brew install tree
+	# @echo "A bit of [tree] installing if necessary..."
+	# @brew install tree
 	@$(CLANG) $(FLAGS) -o $(NAME) $(SRCS)
 	@echo $(GR) "generated executable" $(NO)
 

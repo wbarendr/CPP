@@ -6,7 +6,7 @@
 /*   By: Wester <Wester@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/09 14:15:35 by Wester        #+#    #+#                 */
-/*   Updated: 2020/09/09 18:25:51 by Wester        ########   odam.nl         */
+/*   Updated: 2020/10/02 13:45:02 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,13 @@ class Form
 
 	void				beSigned(const Bureaucrat& crat);
 
-	class GradeTooLowException : public std::runtime_error {
+	class GradeTooLowException : public std::exception {
 	  public:
-	  	GradeTooLowException();
-	  	virtual ~GradeTooLowException() throw();
+		GradeTooLowException();
+		GradeTooLowException(const GradeTooLowException& other);
+		GradeTooLowException& 		operator=(const GradeTooLowException& other);
+		virtual ~GradeTooLowException() throw();
+		virtual const char    		*what() const throw();
 	};
 };
 

@@ -6,7 +6,7 @@
 /*   By: Wester <Wester@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/09 14:29:31 by Wester        #+#    #+#                 */
-/*   Updated: 2020/09/10 12:22:40 by Wester        ########   odam.nl         */
+/*   Updated: 2020/10/02 13:59:59 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,17 +69,41 @@ void        Form::beSigned(const Bureaucrat& crat){
 	crat.signForm(*this);
 }
 
-Form::GradeTooLowException::GradeTooLowException(void):
-	runtime_error("gonna need a higher bureaucrat to sign or execute these papers mate..")
+Form::GradeTooLowException::GradeTooLowException(void)
 {}
+
+Form::GradeTooLowException::GradeTooLowException(const GradeTooLowException& other){
+	*this = other; 
+}
+
+Form::GradeTooLowException& Form::GradeTooLowException::operator=(const GradeTooLowException& other){
+	static_cast <void> (other);
+	return *this;
+}
 
 Form::GradeTooLowException::~GradeTooLowException(void) throw() {}
 
-Form::NotSignedException::NotSignedException(void):
-	runtime_error("these papers are not signed yet mate..")
+const char*			Form::GradeTooLowException::what(void) const throw(){
+	return "gonna need a higher bureaucrat to sign or execute these papers mate..";
+}
+
+Form::NotSignedException::NotSignedException(void)
 {}
 
+Form::NotSignedException::NotSignedException(const NotSignedException& other){
+	*this = other; 
+}
+
+Form::NotSignedException& Form::NotSignedException::operator=(const NotSignedException& other){
+	static_cast <void> (other);
+	return *this;
+}
+
 Form::NotSignedException::~NotSignedException(void) throw() {}
+
+const char*			Form::NotSignedException::what(void) const throw(){
+	return "these papers are not signed yet mate..";
+}
 
 std::ostream&			operator<<(std::ostream& output, const Form& form){
 	output << form.getName() << " has " << form.getGradeSign() << " as grade to sign, and " << form.getGradeExecute() << " as grade to execute. ";

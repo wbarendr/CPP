@@ -6,12 +6,13 @@
 /*   By: Wester <Wester@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/09 19:57:05 by Wester        #+#    #+#                 */
-/*   Updated: 2020/09/10 17:20:33 by Wester        ########   odam.nl         */
+/*   Updated: 2020/10/02 15:23:48 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
 #include <ctime>
+#include <cstdlib>
 
 RobotomyRequestForm::RobotomyRequestForm():
 	Form("robotomy request", 72, 45)

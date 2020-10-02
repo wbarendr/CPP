@@ -6,7 +6,7 @@
 /*   By: Wester <Wester@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/09 18:15:20 by Wester        #+#    #+#                 */
-/*   Updated: 2020/10/02 11:51:37 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/10/02 14:54:55 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define _SHRUBBERYCREATIONFORM_HPP_
 
 # include "Form.hpp"
+# include <fstream>
 
 class ShrubberyCreationForm : public Form
 {

@@ -6,7 +6,7 @@
 /*   By: Wester <Wester@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/04 15:41:34 by Wester        #+#    #+#                 */
-/*   Updated: 2020/10/02 11:49:50 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/10/02 13:45:07 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,16 +38,22 @@ class Bureaucrat
 	void						decrement();
 	void						signForm(const Form& form) const;
 
-	class GradeTooHighException : public std::runtime_error {
+	class GradeTooHighException : public std::exception {
 	  public:
 		GradeTooHighException();
+		GradeTooHighException(const GradeTooHighException& other);
+		GradeTooHighException& 		operator=(const GradeTooHighException& other);
 		virtual ~GradeTooHighException() throw();
+		virtual const char    		*what() const throw();
 	};
 
-	class GradeTooLowException : public std::runtime_error {
+	class GradeTooLowException : public std::exception {
 	  public:
 		GradeTooLowException();
+		GradeTooLowException(const GradeTooLowException& other);
+		GradeTooLowException& 		operator=(const GradeTooLowException& other);
 		virtual ~GradeTooLowException() throw();
+		virtual const char    		*what() const throw();
 	};
 };
 
