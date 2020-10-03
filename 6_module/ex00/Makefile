@@ -6,7 +6,7 @@
 #    By: Wester <Wester@student.codam.nl>             +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/09/11 10:03:09 by Wester        #+#    #+#                  #
-#    Updated: 2020/09/23 13:56:41 by wester        ########   odam.nl          #
+#    Updated: 2020/10/02 22:13:35 by wester        ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,4 +36,3 @@ clean:
 fclean: clean
 
 re: fclean all
-
