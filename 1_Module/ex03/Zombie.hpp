@@ -6,7 +6,7 @@
 /*   By: Wester <Wester@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/28 16:29:34 by Wester        #+#    #+#                 */
-/*   Updated: 2020/09/25 13:50:27 by wester        ########   odam.nl         */
+/*   Updated: 2020/10/04 15:04:15 by wester        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <iostream>
 # include <string>
+# include <cstdlib>
 
 class Zombie 
 {

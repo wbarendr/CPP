@@ -6,7 +6,7 @@
 /*   By: Wester <Wester@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/28 16:42:37 by Wester        #+#    #+#                 */
-/*   Updated: 2020/09/25 11:38:48 by wester        ########   odam.nl         */
+/*   Updated: 2020/10/04 15:03:38 by wester        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <iostream>
 # include "Zombie.hpp"
+# include <cstdlib>
 
 class ZombieEvent 
 {

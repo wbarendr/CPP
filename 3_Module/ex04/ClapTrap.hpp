@@ -6,7 +6,7 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/03 15:29:48 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/10/02 11:56:14 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/10/04 15:01:23 by wester        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <iostream>
 # include <string>
+# include <cstdlib>
 
 class ClapTrap
 {

@@ -6,13 +6,14 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/03 12:55:59 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/09/28 11:42:04 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/10/04 14:58:59 by wester        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap(){
+ScavTrap::ScavTrap()
+{
 	Hit_Points = 100;
 	Energy_Points = 50;
 	Max_Hit_Points = 100;
@@ -56,7 +57,7 @@ ScavTrap&	ScavTrap::operator=(const ScavTrap& overload){
 
 ScavTrap::~ScavTrap(){
 	std::cout << "Destroyer of scav" << std::endl;
-};
+}
 
 void    ScavTrap::rangedAttack(std::string const& target){
 	if (Energy_Points == 0){

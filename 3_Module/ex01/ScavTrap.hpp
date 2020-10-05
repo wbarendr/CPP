@@ -6,15 +6,16 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/03 12:54:48 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/09/28 11:42:12 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/10/04 14:58:47 by wester        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef _SCAVTRAP_HPP_
 # define _SCAVTRAP_HPP_
 
-#include <iostream>
-#include <string>
+# include <iostream>
+# include <string>
+# include <cstdlib>
 
 class ScavTrap {
   protected:
@@ -39,7 +40,6 @@ class ScavTrap {
     void takeDamage(unsigned int amount);
     void beRepaired(unsigned int amount);
     void challengeNewcomer(std::string const& target);
-  
-;
+};
 
 #endif

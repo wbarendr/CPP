@@ -6,15 +6,18 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/29 13:36:27 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/09/30 21:50:08 by wester        ########   odam.nl         */
+/*   Updated: 2020/10/04 15:08:58 by wester        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <string>
 #include <fstream>
+#include <cstring>
+// #include <cstdlib>
 
-bool fexists1(std::string fname)
+
+bool fexists1(const char * fname)
 {
     std::ifstream f;
     f.open(fname);

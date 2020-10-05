@@ -6,7 +6,7 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/01 11:51:07 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/09/28 11:43:51 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/10/04 14:56:47 by wester        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ FragTrap&	FragTrap::operator=(const FragTrap& overload){
 
 FragTrap::~FragTrap(){
 	std::cout << "Destructing FragTrap" << std::endl;
-};
+}
 
 void    FragTrap::rangedAttack(std::string const& target){
 	if (Energy_Points == 0){

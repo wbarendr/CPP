@@ -6,15 +6,16 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/01 11:43:56 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/09/28 11:41:06 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/10/04 14:55:05 by wester        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef _FRAGTRAP_HPP_
 # define _FRAGTRAP_HPP_
 
-#include <iostream>
-#include <string>
+# include <iostream>
+# include <string>
+# include <cstdlib>
 
 class FragTrap {
 	protected:

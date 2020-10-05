@@ -6,13 +6,14 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/16 15:09:47 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/09/17 12:01:47 by wester        ########   odam.nl         */
+/*   Updated: 2020/10/04 16:58:51 by wester        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <string>
 #include <iomanip>
+#include <cstdlib>
 
 struct          Data
 {
@@ -27,14 +28,15 @@ Data*       create_data(void){
 
     static bool first = false;
     if (!first){
-        std::srand(std::time(0));
+        std::srand(time(0));
         first = true;
     }
-    data_n->n = std::rand();
+    data_n->n = 1212211212; //std::rand();
     for (int i = 0; i < 8; ++i){
-            data_n->s1.push_back(alpha_num[std::rand() % 62]);
-            data_n->s2.push_back(alpha_num[std::rand() % 62]);
+            data_n->s1.push_back(alpha_num[std::rand() % 61]);
+            data_n->s2.push_back(alpha_num[std::rand() % 61]);
     }
+    data_n->s2.push_back(0);
     return data_n;
 }
 
@@ -45,10 +47,14 @@ void*           serialize(void){
     for (int i = 0; i < 8 ; ++i){
         one[i] = data_n->s1[i];
     }
+    std::cout << "pointer one: " << &one << std::endl;
     int* two = (int *)(one + 8);
     *two = data_n->n;
-    two++;
+    std::cout << "pointer num: " << two << std::endl;
+    (two)++;
+    std::cout << "pointer num: " << two << std::endl;
     char* three = (char *)two;
+    std::cout << "pointer chr: " << &three << std::endl;
     for (int i = 0; i < 8 ; ++i){
         *three = data_n->s2[i];
         three++;
@@ -75,25 +81,34 @@ Data*       deserialize(void* raw){
     return data_n;
 }
 
+std::string     ft_substr(std::string str, int start, int end){
+    std::string new_str;
+
+    for (int i = 0; start + i < end; ++i)
+        new_str.push_back(str[start + i]);
+    return new_str;
+}
+
 int             main(void)
 {
     void*   raw;
     Data*   data_n;
 
-    for (int i = 0; i < 3; ++i){
+    for (int i = 0; i < 300; ++i){
         raw = serialize();
         std::string str = (char *)raw;
         char *num_c = (char *)raw;
         num_c += 8;
         int* num = (int *)num_c;
-        std::cout << "raw s1:  " << &str << "  " << str.substr(0, 8) << std::endl;
-        std::cout << "raw n:   " << &str << "  " << *num << std::endl;
-        std::cout << "raw s2:  " << &str << "  " << str.substr(12, 20) << std::endl;
+        std::cout << "raw s1:  " << &str << "  " << ft_substr(str, 0, 8) << std::endl;
+        std::cout << "raw n:   " << &num_c << "  " << *num << std::endl;
+        std::cout << "raw s2:  " << &str << "  " << ft_substr(str, 12, 20) << std::endl << std::endl;
 
         data_n = deserialize(raw);
         std::cout << "    s1:  " << &data_n->s1 << "  " << data_n->s1 << std::endl;
         std::cout << "    n:   " << &data_n->n << "  " << data_n->n << std::endl;
-        std::cout << "    s2:  " << &data_n->s2 << "  " << data_n->s2 << std::endl << std::endl;      
+        std::cout << "    s2:  " << &data_n->s2 << "  " << data_n->s2 << std::endl;
+        std::cout << std::endl << "    - - - - - - - - - - - - - - " << std::endl << std::endl;      
         delete static_cast<char*>(raw);
         delete data_n;
     }
