@@ -6,7 +6,7 @@
 /*   By: Wester <Wester@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/09 19:54:16 by Wester        #+#    #+#                 */
-/*   Updated: 2020/10/02 11:50:09 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/10/07 13:40:54 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class PresidentialPardonForm : public Form
     PresidentialPardonForm(const PresidentialPardonForm& other);
     PresidentialPardonForm&      operator=(const PresidentialPardonForm& other);
     virtual ~PresidentialPardonForm();
-    void                        execute(Bureaucrat const & executor) const;
+    virtual void                 execute(Bureaucrat const & executor) const;
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: Wester <Wester@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/09 19:57:39 by Wester        #+#    #+#                 */
-/*   Updated: 2020/10/02 11:50:23 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/10/07 13:40:58 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class RobotomyRequestForm : public Form
     RobotomyRequestForm(const RobotomyRequestForm& other);
     RobotomyRequestForm&      operator=(const RobotomyRequestForm& other);
     virtual ~RobotomyRequestForm();
-    void                        execute(Bureaucrat const & executor) const;
+    virtual void              execute(Bureaucrat const & executor) const;
 };
 
 #endif

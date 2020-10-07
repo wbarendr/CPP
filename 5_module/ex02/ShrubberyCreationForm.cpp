@@ -6,7 +6,7 @@
 /*   By: Wester <Wester@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/09 18:09:11 by Wester        #+#    #+#                 */
-/*   Updated: 2020/10/02 15:22:36 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/10/07 13:43:35 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ ShrubberyCreationForm&      ShrubberyCreationForm::operator=(const ShrubberyCrea
 ShrubberyCreationForm::~ShrubberyCreationForm(){}
 
 void						ShrubberyCreationForm::execute(Bureaucrat const & executor) const{
+	Form::execute(executor);
 	std::ofstream	output;
 	std::string link1 = this->_target + "_shrubbery";
 	const char* link2 = link1.c_str();
@@ -60,5 +61,4 @@ void						ShrubberyCreationForm::execute(Bureaucrat const & executor) const{
 	// std::string str = "tree > " + this->_target + "_shrubbery";
 	// const char *command = str.c_str();
 	// system(command);
-	(void)executor;
 }
