@@ -6,7 +6,7 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/01 13:09:35 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/09/28 12:29:51 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/10/08 17:09:41 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@ Squad::Squad(){
 }
 
 Squad::Squad(const Squad& other){
-	this->_count = other._count;
-	this->deepCopy(other);
+	*this = other;
 }
 
 Squad& Squad::operator=(const Squad& other){
-	(void)other;
+	this->_count = other._count;
+	this->deepCopy(other);
 	return *this;
 }
 
@@ -33,6 +33,7 @@ Squad::~Squad(){
 
 void	Squad::deepCopy(const Squad& other)
 {
+	destroyUnits();
 	for (int i = 0; i < other.getCount(); ++i){
 		push(other.getUnit(i));
 	}

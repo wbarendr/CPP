@@ -6,7 +6,7 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/07 12:43:35 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/09/28 12:26:48 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/10/08 15:23:38 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@
 
 # include "Enemy.hpp"
 
-class RadScorpion : public virtual Enemy{
+class RadScorpion : public Enemy{
   public:
   	RadScorpion();
-	virtual ~RadScorpion();
 	RadScorpion(const RadScorpion& other);
 	RadScorpion& 	operator=(const RadScorpion& other);
+	virtual ~RadScorpion();
 };
 
 #endif

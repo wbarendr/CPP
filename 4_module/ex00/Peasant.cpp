@@ -6,7 +6,7 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/03 16:14:14 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/09/28 12:11:07 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/10/08 15:14:17 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,5 @@ Peasant& Peasant::operator=(const Peasant& other)
 }
 
 void    Peasant::getPolymorphed() const{
-    std::cout << name << " has been turned a shovel" << std::endl;
+    std::cout << name << " has been turned into a shovel" << std::endl;
 }

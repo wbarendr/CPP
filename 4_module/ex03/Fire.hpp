@@ -6,7 +6,7 @@
 /*   By: Wester <Wester@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/04 14:43:10 by Wester        #+#    #+#                 */
-/*   Updated: 2020/10/01 14:15:56 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/10/08 17:15:04 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ class Fire : public AMateria
 	Fire(const Fire& other);
 	Fire& 				operator=(const Fire& other);
 	virtual ~Fire();
-	AMateria*	 		clone() const;
-	void      			use(ICharacter& target);
+	virtual AMateria*	clone() const;
+	virtual void      	use(ICharacter& target);
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/02 14:23:46 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/10/02 11:43:57 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/10/08 17:14:49 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ class Cure : public AMateria
 	Cure(const Cure& other);
 	Cure& 				operator=(const Cure& other);
 	virtual ~Cure();
-	AMateria*	 		clone() const;
-	void      			use(ICharacter& target);
+	virtual AMateria*	clone() const;
+	virtual void      	use(ICharacter& target);
 };
 
 #endif

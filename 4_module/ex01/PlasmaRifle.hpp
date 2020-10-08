@@ -6,7 +6,7 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/07 10:55:20 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/09/28 12:26:16 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/10/08 15:23:17 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 
 # include "AWeapon.hpp"
 
-class PlasmaRifle : public virtual AWeapon{
+class PlasmaRifle : public AWeapon{
   public:
 	PlasmaRifle();
-	virtual ~PlasmaRifle();
 	PlasmaRifle(const PlasmaRifle& other);
 	PlasmaRifle& 	operator=(const PlasmaRifle& other);
-	void 			attack() const;
+	virtual ~PlasmaRifle();
+	virtual void 	attack() const;
 };
 
 #endif

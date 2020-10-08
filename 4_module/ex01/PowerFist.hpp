@@ -6,7 +6,7 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/07 12:05:42 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/09/28 12:26:30 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/10/08 15:23:21 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 
 # include "AWeapon.hpp"
 
-class PowerFist : public virtual AWeapon{
+class PowerFist : public AWeapon{
   public:
 	PowerFist();
-	virtual ~PowerFist() {};
 	PowerFist(const PowerFist& other);
-	PowerFist& 	operator=(const PowerFist& other);
-	void 			attack() const;
+	PowerFist& 		operator=(const PowerFist& other);
+	virtual ~PowerFist() {};
+	virtual void 	attack() const;
 };
 
 #endif

@@ -1,36 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Enemy.hpp                                          :+:    :+:            */
+/*   flamethrower.hpp                                   :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/08/07 12:09:26 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/10/08 16:27:14 by wbarendr      ########   odam.nl         */
+/*   Created: 2020/10/08 15:40:56 by wbarendr      #+#    #+#                 */
+/*   Updated: 2020/10/08 15:41:31 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _ENEMY_HPP_
-# define _ENEMY_HPP_
+#ifndef _FLAMETHROWER_
+# define _FLAMETHROWER_
 
 # include "AWeapon.hpp"
 
-class Enemy
-{
-  private:
-	int _hp;
-	std::string _type;
+class Flamethrower : public AWeapon{
   public:
-	Enemy();
-	Enemy(const Enemy& other);
-	Enemy(int hp, std::string const& type);
-	Enemy&	operator=(const Enemy& other);
-	virtual ~Enemy();
-	std::string 	getType() const;
-	int 			getHP() const;
-	void			setHP(int hp);
-	void			setType(std::string type);
-	virtual void 	takeDamage(int);
+	Flamethrower();
+	Flamethrower(const Flamethrower& other);
+	Flamethrower& 		operator=(const Flamethrower& other);
+	virtual ~Flamethrower() {};
+	virtual void 	attack() const;
 };
 
 #endif

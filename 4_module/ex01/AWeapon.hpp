@@ -6,7 +6,7 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/07 10:35:26 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/09/28 12:22:22 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/10/08 16:26:59 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,14 @@ class AWeapon
 	AWeapon(const AWeapon& other);
 	AWeapon& 	operator=(const AWeapon& other);
 	virtual 	~AWeapon();
-	std::string getName() const;
-	int 		getAPCost() const;
-	int 		getDamage() const;
-	void		setName(std::string name);
-	void		setAP(int apcost);
-	void		setDamage(int damage);
-	virtual void 		attack() const = 0;
+	
+	std::string 	getName() const;
+	int 			getAPCost() const;
+	int 			getDamage() const;
+	void			setName(std::string name);
+	void			setAP(int apcost);
+	void			setDamage(int damage);
+	virtual void 	attack() const = 0;
 };
 
 #endif

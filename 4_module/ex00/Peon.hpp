@@ -6,7 +6,7 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/06 14:13:23 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/09/28 12:11:51 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/10/08 15:25:59 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,13 @@
 
 # include "Victim.hpp"
 
-class Peon : public virtual Victim{
+class Peon : public Victim{
+    Peon();
   public:
-    virtual ~Peon();
     Peon(std::string _name);
     Peon(const Peon& other);
     Peon& operator=(const Peon& other);
+    virtual ~Peon();
     
     void  getPolymorphed()const;
 };

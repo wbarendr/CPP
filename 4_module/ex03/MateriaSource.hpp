@@ -6,7 +6,7 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/03 13:29:55 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/10/02 11:44:20 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/10/08 17:13:22 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ class MateriaSource : public IMateriaSource
     MateriaSource& operator=(const MateriaSource& other);
     virtual ~MateriaSource();
 
-    void            learnMateria(AMateria* materia);
-    AMateria*       createMateria(std::string const& type);
+    virtual void            learnMateria(AMateria* materia);
+    virtual AMateria*       createMateria(std::string const& type);
 };
 
 #endif

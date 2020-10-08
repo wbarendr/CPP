@@ -6,7 +6,7 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/01 12:50:58 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/10/02 16:08:45 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/10/08 17:09:06 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,21 +27,28 @@ void    call_function(void){
     ISpaceMarine* Genet = new NakedMoleRat;
     
     ISquad* vlc = new Squad;
-    vlc->push(Bob);
+    ISquad* vlc2 = new Squad;
+    
     vlc->push(Jim);
-    vlc->push(Tim);
     vlc->push(Kees);
     vlc->push(Robbo);
     vlc->push(Simon);
-    vlc->push(Genet);
-    for (int i = 0; i < vlc->getCount(); ++i)
+    
+    vlc2->push(Bob);
+    vlc2->push(Tim);
+    vlc2->push(Genet);
+
+    ISquad* vlc3(vlc2);
+    for (int i = 0; i < vlc3->getCount(); ++i)
     {
-        ISpaceMarine* cur = vlc->getUnit(i);
+        ISpaceMarine* cur = vlc3->getUnit(i);
         cur->battleCry();
         cur->rangedAttack();
         cur->meleeAttack();
     }
     delete vlc;
+    std::cout << "hi\n";
+    delete vlc2;
     
 }
 
@@ -50,6 +57,7 @@ void    call_function1()
     ISpaceMarine* bob = new TacticalMarine;
     ISpaceMarine* jim = new AssaultTerminator;
     ISquad* vlc = new Squad;
+    
     vlc->push(bob);
     vlc->push(jim);
     for (int i = 0; i < vlc->getCount(); ++i)

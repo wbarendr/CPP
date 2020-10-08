@@ -6,7 +6,7 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/07 13:34:42 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/10/02 16:08:08 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/10/08 16:18:15 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 # include "RadScorpion.hpp"
 # include "Embarrass.hpp"
 # include "SuperMutant.hpp"
+# include "Flamethrower.hpp"
+# include "Warden.hpp"
 
 
 void        call_function(void)
@@ -30,10 +32,12 @@ void        call_function(void)
     
     Enemy* bad = new SuperMutant();
     
+    Enemy* War = new Warden();
     AWeapon* pr = new PlasmaRifle();
     AWeapon* pf = new PowerFist();
     AWeapon* pl = new Embarrass();
-
+    AWeapon* fire = new Flamethrower();
+    
     me->equip(pr);
     std::cout << *me;
     me->equip(pf);
@@ -52,14 +56,39 @@ void        call_function(void)
     std::cout << *me;
     me->attack(b);
     std::cout << *me;
-    me->attack(bad);
-    std::cout << *me;
     
+    std::cout << std::endl << std::endl;
+    std::cout << "hp of mutant: " << bad->getHP() << std::endl;
+    std::cout << "attack genant should hurt " << pl->getDamage() << std::endl;
+    me->attack(bad);
+    std::cout << "hp of mutant: " << bad->getHP() << std::endl;
+    std::cout << *me;
+
+    std::cout << std::endl << std::endl;
+    std::cout << "hp of warden: " << War->getHP() << std::endl; 
+    me->equip(fire);
+    for (int i = 0; i < 20; ++i){
+        if (i % 5 == 0)
+               me->recoverAP();
+        me->attack(War);
+    }
+    
+    std::cout << "it has no use... I give up.." << std::endl; 
+    std::cout << "hp of warden: " << War->getHP() << std::endl;
+    if (War->getHP() != 0)
+        delete War;
+    std::cout << "hp of b: " << b->getHP() << std::endl;
+    if (b->getHP() != 0)
+        delete b;
+    std::cout << "hp of bad: " << bad->getHP() << std::endl;
+    if (bad->getHP() != 0){
+        delete bad;
+    }
+    delete fire;
     delete me;
     delete pr;
     delete pf;
     delete pl;
-    delete bad;
 }
 
 void        call_function1(void)
@@ -96,7 +125,7 @@ int main()
 {
     // call_function();
     call_function1();
-    // system("leaks a.out | grep bytes");
+    system("leaks a.out | grep bytes");
 
     return 0;
 }

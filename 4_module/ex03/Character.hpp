@@ -6,7 +6,7 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/02 15:12:47 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/10/02 11:43:51 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/10/08 17:20:49 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 class Character : public ICharacter 
 {
 	std::string		_name;
-	AMateria* 		_materia[5];
+	AMateria* 		_materia[4];
 	int				num;
 	Character();
 	
@@ -29,11 +29,11 @@ class Character : public ICharacter
 	Character& operator=(const Character& other);
 	virtual ~Character();
 	
-	std::string const&          getName() const;
-	void 						equip(AMateria* m);
-	void 						unequip(int idx);
-	void 						use(int idx, ICharacter& target);
-	void						delete_mat();
+	virtual std::string const&  	getName() const;
+	virtual void 					equip(AMateria* m);
+	virtual void 					unequip(int idx);
+	virtual void 					use(int idx, ICharacter& target);
+	void							delete_mat();
 };
 
 #endif

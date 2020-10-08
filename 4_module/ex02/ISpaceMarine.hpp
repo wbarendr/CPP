@@ -6,7 +6,7 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/31 16:47:09 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/09/28 12:28:27 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/10/08 16:30:30 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,4 @@ class ISpaceMarine
     virtual void rangedAttack() const = 0;
     virtual void meleeAttack() const = 0;
 };
-
 #endif

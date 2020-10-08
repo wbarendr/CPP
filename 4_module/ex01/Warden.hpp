@@ -1,36 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Enemy.hpp                                          :+:    :+:            */
+/*   Warden.hpp                                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/08/07 12:09:26 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/10/08 16:27:14 by wbarendr      ########   odam.nl         */
+/*   Created: 2020/10/08 15:50:59 by wbarendr      #+#    #+#                 */
+/*   Updated: 2020/10/08 15:51:18 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _ENEMY_HPP_
-# define _ENEMY_HPP_
+#ifndef _WARDEN_HPP_
+# define _WARDEN_HPP_
 
-# include "AWeapon.hpp"
+# include "Enemy.hpp"
 
-class Enemy
-{
-  private:
-	int _hp;
-	std::string _type;
+class Warden : public Enemy{
   public:
-	Enemy();
-	Enemy(const Enemy& other);
-	Enemy(int hp, std::string const& type);
-	Enemy&	operator=(const Enemy& other);
-	virtual ~Enemy();
-	std::string 	getType() const;
-	int 			getHP() const;
-	void			setHP(int hp);
-	void			setType(std::string type);
-	virtual void 	takeDamage(int);
+	Warden();
+	Warden(const Warden& other);
+	Warden& 	operator=(const Warden& other);
+	virtual ~Warden();
+    virtual void    takeDamage(int damage);
 };
 
 #endif

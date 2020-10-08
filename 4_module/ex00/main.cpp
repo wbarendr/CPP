@@ -6,7 +6,7 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/06 13:50:35 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/10/02 11:48:36 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/10/08 15:18:45 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,19 +17,18 @@
 
 void	call_function1(void)
 {	
-// 	Sorcerer robert("Robert", "the Magnificent");
-// 	Victim jim("Jimmy");
-// 	Peon joe("Joe");
-// 	Peasant tyler("frenchie");
+	Sorcerer robert("Robert", "the Magnificent");
+	Victim jim("Jimmy");
+	Peon joe("Joe");
+	Peasant tyler("frenchie");
 	Victim* Jim = new Peon("joe");
 
 	delete Jim;
-// 	std::cout << robert << jim << joe;
-// 	std::cout << robert << jim << tyler;
-// 	robert.polymorph(jim);
-// 	robert.polymorph(joe);
-// 	robert.polymorph(tyler);
-// }
+	std::cout << robert << jim << joe;
+	std::cout << robert << jim << tyler;
+	robert.polymorph(jim);
+	robert.polymorph(joe);
+	robert.polymorph(tyler);
 }
 
 void		call_function(void)
@@ -45,8 +44,8 @@ void		call_function(void)
 int main()
 {
 	
-	// call_function();
-	call_function1();
-	// system("leaks a.out | grep bytes");
+	call_function();
+	// call_function1();
+	system("leaks a.out | grep bytes");
 	return 0;
 }
