@@ -6,7 +6,7 @@
 /*   By: Wester <Wester@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/04 15:41:34 by Wester        #+#    #+#                 */
-/*   Updated: 2020/10/02 14:00:57 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/10/08 11:34:30 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ class Bureaucrat
 	void						decrement();
 	void						signForm(const Form& form) const;
 
+	void						executeForm(Form const & form);
+	
 	class GradeTooHighException : public std::exception {
 	  public:
 		GradeTooHighException();

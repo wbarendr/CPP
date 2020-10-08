@@ -6,7 +6,7 @@
 /*   By: Wester <Wester@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/09 19:57:05 by Wester        #+#    #+#                 */
-/*   Updated: 2020/10/07 13:43:55 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/10/08 12:05:10 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,16 @@
 #include <cstdlib>
 
 RobotomyRequestForm::RobotomyRequestForm():
-	Form("Presidential Pardon Form", 72, 45)
+	Form("Robotomy Request Form", 72, 45)
 {}
 
 RobotomyRequestForm::RobotomyRequestForm(std::string target):
-	Form("Presidential Pardon Form", 72, 45),
+	Form("Robotomy Request Form", 72, 45),
 	_target(target)
 {}
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& other):
-	Form("Presidential Pardon Form", 72, 45, other.getSigned()),
+	Form("Robotomy Request Form", 72, 45, other.getSigned()),
 	_target(other._target)
 {}
 

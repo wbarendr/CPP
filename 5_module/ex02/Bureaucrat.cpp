@@ -6,7 +6,7 @@
 /*   By: Wester <Wester@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/04 15:48:23 by Wester        #+#    #+#                 */
-/*   Updated: 2020/10/07 13:26:13 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/10/08 11:56:11 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,4 +102,15 @@ void						Bureaucrat::signForm(const Form& form) const
 		std::cout << getName() << " signs " << form.getName() << std::endl;
 	else 
 		std::cout << getName() << " cannot sign " << form.getName() << " because grade is to low" << std::endl;
+}
+
+void						Bureaucrat::executeForm(Form const & form)
+{
+	try {
+		form.execute(*this);
+		std::cout << _name << " executes " <<  form.getName() << std::endl;
+	}
+	catch (std::exception &e){
+		std::cout << e.what() << std::endl;
+	}
 }

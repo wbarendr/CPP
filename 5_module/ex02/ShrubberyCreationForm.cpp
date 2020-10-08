@@ -6,23 +6,23 @@
 /*   By: Wester <Wester@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/09 18:09:11 by Wester        #+#    #+#                 */
-/*   Updated: 2020/10/07 13:43:35 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/10/08 13:40:00 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 
 ShrubberyCreationForm::ShrubberyCreationForm():
-	Form("Shrubbery Creation Form", 145, 137)
+	Form("shrubbery creation", 145, 137)
 {}
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target):
-	Form("ShrubberyCreationForm", 145, 137),
+	Form("shrubbery creation", 145, 137),
 	_target(target)
 {}
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& other):
-	Form("Shrubbery Creation Form", 145, 137, other.getSigned()),
+	Form("shrubbery creation", 145, 137, other.getSigned()),
 	_target(other._target)
 {}
 
@@ -37,9 +37,9 @@ ShrubberyCreationForm::~ShrubberyCreationForm(){}
 void						ShrubberyCreationForm::execute(Bureaucrat const & executor) const{
 	Form::execute(executor);
 	std::ofstream	output;
-	std::string link1 = this->_target + "_shrubbery";
-	const char* link2 = link1.c_str();
-	output.open(link2, std::ofstream::out | std::ofstream::trunc);
+	std::string str = this->_target + "_shrubbery";
+	const char* str2 = str.c_str();
+	output.open(str2, std::ofstream::out | std::ofstream::trunc);
 	if (output.fail())
 		std::cerr << "there was a error makiing the output - file" << std::endl;
 		

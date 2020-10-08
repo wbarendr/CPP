@@ -6,7 +6,7 @@
 /*   By: Wester <Wester@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/09 12:57:47 by Wester        #+#    #+#                 */
-/*   Updated: 2020/10/07 13:45:25 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/10/08 12:09:10 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,51 +69,58 @@ int         main(void)
 	// 	std::cout << error.what() << std::endl;
 	// }
 	
-	std::cout << std::endl << "wester -> form" << std::endl;
-	try {
-		Bureaucrat wester("wessa_b", 100);
-		Form law("muy_importante", 99, 1);
+	// std::cout << std::endl << "wester -> form" << std::endl;
+	// try {
+	// 	Bureaucrat wester("wessa_b", 100);
+	// 	Form law("muy_importante", 99, 1);
 
-		std::cout << law << std::endl;
-		law.beSigned(wester);
-	}
-	catch (const std::exception& error){
-		std::cout << error.what() << std::endl;
-	}
+	// 	std::cout << law << std::endl;
+	// 	law.beSigned(wester);
+	// }
+	// catch (const std::exception& error){
+	// 	std::cout << error.what() << std::endl;
+	// }
 
-	std::cout << std::endl << "kees -> form:" << std::endl;
-	try {
-		Bureaucrat kees("keesy", 100);
-		Form law("also_importante", 99, 10);
+	// std::cout << std::endl << "kees -> form:" << std::endl;
+	// try {
+	// 	Bureaucrat kees("keesy", 100);
+	// 	Form law("also_importante", 99, 10);
 
-		std::cout << law << std::endl;
-		kees.increment();
-		law.beSigned(kees);
-		std::cout << law << std::endl;
-	}
-	catch (const std::exception& error){
-		std::cout << error.what() << std::endl;
-	}
+	// 	std::cout << law << std::endl;
+	// 	kees.increment();
+	// 	law.beSigned(kees);
+	// 	std::cout << law << std::endl;
+	// }
+	// catch (const std::exception& error){
+	// 	std::cout << error.what() << std::endl;
+	// }
 	std::cout << std::endl << "new:: -> forms:" << std::endl;
 
-	try {
 		Form* one = new ShrubberyCreationForm("Planet_9");
 		Form* two = new RobotomyRequestForm("Venus");
 		Form* three = new PresidentialPardonForm("Marvin");
 		
 		Bureaucrat Obama("Barackaaaa", 9);
 		Bureaucrat Trump("the donald", 10);
+	try {
 		
 		one->beSigned(Trump);
-		two->beSigned(Trump);
-		three->beSigned(Trump);
+		Obama.executeForm(*one);
+		std::cout << std::endl;
 		
-		one->execute(Obama);
-		two->execute(Obama);
-		three->execute(Obama);
+		Obama.executeForm(*two);
+		two->beSigned(Trump);
+		Obama.executeForm(*two);
+		
+		std::cout << std::endl;
+		three->beSigned(Trump);
+		Obama.executeForm(*three);
+		std::cout << std::endl;
 	}
 	catch (const std::exception& error){
+		std::cout << std::endl;
 		std::cout << error.what() << std::endl;
 	}
+	
 	return 0;
 }

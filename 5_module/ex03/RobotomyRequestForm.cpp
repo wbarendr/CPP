@@ -6,7 +6,7 @@
 /*   By: Wester <Wester@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/09 19:57:05 by Wester        #+#    #+#                 */
-/*   Updated: 2020/10/02 15:23:48 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/10/08 11:29:23 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ RobotomyRequestForm&      RobotomyRequestForm::operator=(const RobotomyRequestFo
 RobotomyRequestForm::~RobotomyRequestForm(){}
 
 void						RobotomyRequestForm::execute(Bureaucrat const & executor) const{
+    Form::execute(executor);
     std::cout << "drill drill drillllllll" << std::endl;
     static bool first = false;
     if (!first)
@@ -49,5 +50,4 @@ void						RobotomyRequestForm::execute(Bureaucrat const & executor) const{
         std::cout << this->_target << " has been robotomized successfully." << std::endl;
     else
         std::cout << "unfortunately is was a failure..." << std::endl;
-    (void)executor;    
 }

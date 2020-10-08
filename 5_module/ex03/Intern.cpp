@@ -6,7 +6,7 @@
 /*   By: Wester <Wester@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/10 16:10:56 by Wester        #+#    #+#                 */
-/*   Updated: 2020/09/10 17:15:19 by Wester        ########   odam.nl         */
+/*   Updated: 2020/10/08 13:43:56 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,14 +35,20 @@ Form*		Intern::makeForm(std::string form_name, std::string target){
 	_forms[0] = new PresidentialPardonForm(target);
 	_forms[1] = new ShrubberyCreationForm(target);
 	_forms[2] = new RobotomyRequestForm(target);
-	for (int i = 0; i < 3; ++i)
-		if (form_name == _forms[i]->getName())
+	int i = 0;
+	for (; i < 3; ++i)
+		if (form_name == _forms[i]->getName()){
 			ret = _forms[i];
+			break ;
+		}
 	if (ret == NULL)		
 		std::cout << "don't got ya form mate" << std::endl;
 	else
 		std::cout << "Intern creates " << ret->getName() << std::endl;
-	for (int i = 0; i < 3; ++i)
-		delete _forms[i];
+	for (int j = 0; j < 3; ++j){
+		if (j != i)
+			delete _forms[j];
+	}
+	std::cout << "i: " << i << std::endl; 
 	return ret;
 }

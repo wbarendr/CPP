@@ -6,7 +6,7 @@
 /*   By: Wester <Wester@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/09 14:29:31 by Wester        #+#    #+#                 */
-/*   Updated: 2020/10/02 14:22:13 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/10/08 11:27:19 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,6 @@ void        Form::beSigned(const Bureaucrat& crat){
 	if (crat.getGrade() > this->getGradeSign()){
 		crat.signForm(*this);
 		throw Form::GradeTooLowException();
-		return ; // not necessary because a throw doesn't return. 
 	}
 	else 
 		_signed = true;
