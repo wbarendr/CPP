@@ -6,7 +6,7 @@
 /*   By: wester <wester@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/17 10:38:33 by wester        #+#    #+#                 */
-/*   Updated: 2020/09/17 11:35:48 by wester        ########   odam.nl         */
+/*   Updated: 2020/10/09 11:21:22 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Base*			generate(void){
 
 	static bool first = false;
 	if (!first){
-		std::srand(std::time(0));
+		std::srand(time(0));
 		first = true;
 	}
 	int num = std::rand() % 3;
@@ -74,5 +74,6 @@ int				main(void){
 	identify_from_pointer(p); 
 	identify_from_reference(*p);
 	
+	system("leaks identify | grep bytes");
 	return 0;
 }

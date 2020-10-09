@@ -6,7 +6,7 @@
 /*   By: wester <wester@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/16 22:55:38 by wester        #+#    #+#                 */
-/*   Updated: 2020/09/17 11:08:09 by wester        ########   odam.nl         */
+/*   Updated: 2020/10/09 11:15:30 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define _BASE_HPP_
 
 # include <iostream>
+# include <cstdlib>
 
 class Base
 {

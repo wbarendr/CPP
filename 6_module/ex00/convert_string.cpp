@@ -6,7 +6,7 @@
 /*   By: wester <wester@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/03 16:02:58 by wester        #+#    #+#                 */
-/*   Updated: 2020/10/03 17:58:34 by wester        ########   odam.nl         */
+/*   Updated: 2020/10/09 11:12:13 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,24 +84,28 @@ int			main(int argc, char **argv){
 	if (check == 5)
 		return error_message("input given is incorrect");
 	if (check == 1){
+		std::cout << "INPUT IS A CHAR" << std::endl;
 		type.C = argv[1][0];
 		type.NUM = static_cast<int>(type.C);
 		type.FL = static_cast<float>(type.C);
 		type.DB = static_cast<double>(type.C);
 	}
 	else if (check == 2){
+		std::cout << "INPUT IS A INT" << std::endl;
 		type.NUM = atoi(argv[1]);
 		type.C = static_cast<char>(type.NUM);
 		type.FL = static_cast<float>(type.NUM);
 		type.DB = static_cast<double>(type.NUM);
 	}
 	if (check == 3){
+		std::cout << "INPUT IS A FLOAT" << std::endl;
 		type.FL = atof(argv[1]);
 		type.C = static_cast<char>(type.FL);
 		type.NUM = static_cast<int>(type.FL);
 		type.DB = static_cast<double>(type.FL);
 	}
 	if (check == 4){
+		std::cout << "INPUT IS A DOUBLE" << std::endl;
 		type.DB = atof(argv[1]);
 		type.C = static_cast<char>(type.DB);
 		type.NUM = static_cast<int>(type.DB);
