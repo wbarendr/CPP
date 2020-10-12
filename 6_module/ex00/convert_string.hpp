@@ -6,7 +6,7 @@
 /*   By: wester <wester@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/03 16:16:41 by wester        #+#    #+#                 */
-/*   Updated: 2020/10/04 14:37:35 by wester        ########   odam.nl         */
+/*   Updated: 2020/10/09 14:20:32 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@
 
 typedef struct s_types
 {
-    char        C;
-	int         NUM;
-	float       FL;
-	double      DB;
-    int         NEG;
-    int         num_fixed;
+    char                        C;
+	int                         NUM;
+	float                       FL;
+	double                      DB;
+    int                         NEG;
+    int                         num_fixed;
 }               t_types;
 
 #endif

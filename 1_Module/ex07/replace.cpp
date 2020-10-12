@@ -6,7 +6,7 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/29 13:36:27 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/10/04 15:08:58 by wester        ########   odam.nl         */
+/*   Updated: 2020/10/12 11:53:41 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ int         main(int argc, char **argv)
                 if (pos != std::string::npos){
                     line.replace(pos, strlen(argv[2]), argv[3]);
                 }
-                pos = line.find(argv[2], pos + 1);
+                pos = line.find(argv[2], pos + strlen(argv[3]));
             }
             new_file << line << std::endl;
             while (getline(f, line))
@@ -71,7 +71,7 @@ int         main(int argc, char **argv)
                     if (pos != std::string::npos){
                         line.replace(pos, strlen(argv[2]), argv[3]);
                     }
-                    pos = line.find(argv[2], pos + 1);
+                    pos = line.find(argv[2], pos + strlen(argv[3]));
                 }
                 new_file << line << std::endl;
             }

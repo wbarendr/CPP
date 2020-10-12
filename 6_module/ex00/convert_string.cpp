@@ -6,7 +6,7 @@
 /*   By: wester <wester@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/03 16:02:58 by wester        #+#    #+#                 */
-/*   Updated: 2020/10/09 11:12:13 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/10/09 14:28:23 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ int			main(int argc, char **argv){
 	int check = find_type(argv[1], &type);
 	// std::cout << check << std::endl;
 	if (check == 5)
-		return error_message("input given is incorrect");
+		return error_message("conversion is impossible");
 	if (check == 1){
 		std::cout << "INPUT IS A CHAR" << std::endl;
 		type.C = argv[1][0];
@@ -92,6 +92,9 @@ int			main(int argc, char **argv){
 	}
 	else if (check == 2){
 		std::cout << "INPUT IS A INT" << std::endl;
+		type.DB = atof(argv[1]);
+		if (type.DB > 2147483647 || type.DB < -2147483648)
+			return error_message("input is over MAX int or under MIN int");
 		type.NUM = atoi(argv[1]);
 		type.C = static_cast<char>(type.NUM);
 		type.FL = static_cast<float>(type.NUM);
@@ -111,13 +114,17 @@ int			main(int argc, char **argv){
 		type.NUM = static_cast<int>(type.DB);
 		type.FL = static_cast<float>(type.DB);
 	}
-	if (isprint(type.C))
-		std::cout << "char: \'" << type.C << "\'" << std::endl;
-	else
-		std::cout << "char: Non displayable" << std::endl;
-	// if (type.num_fixed == 0)
-	// 	type.num_fixed = 1;
-	std::cout << "int: " << type.NUM << std::endl;
+	if (type.DB > 2147483647 || type.DB < -2147483648){
+			error_message("char: impossible");
+			error_message("int: impossible");
+	}
+	else {
+		if (isprint(type.C))
+			std::cout << "char: \'" << type.C << "\'" << std::endl;
+		else
+			std::cout << "char: Non displayable" << std::endl;
+		std::cout << "int: " << type.NUM << std::endl;
+	}
 	std::cout << std::fixed << std::setprecision(type.num_fixed);
 	std::cout << "float: " << type.FL << "f" << std::endl;
 	std::cout << "double: " << type.DB << std::endl;

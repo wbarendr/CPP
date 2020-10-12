@@ -6,7 +6,7 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/16 15:09:47 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/10/09 11:16:07 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/10/09 14:55:13 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ Data*       create_data(void){
 		std::srand(time(0));
 		first = true;
 	}
-	data_n->n = std::rand();
+	data_n->n = 2133333; //std::rand();
 	for (int i = 0; i < 8; ++i){
 			data_n->s1.push_back(alpha_num[std::rand() % 61]);
 			data_n->s2.push_back(alpha_num[std::rand() % 61]);
@@ -46,15 +46,11 @@ void*           serialize(void){
 	char* one = new char[20];
 	for (int i = 0; i < 8 ; ++i){
 		one[i] = data_n->s1[i];
+		one[i + 12] = data_n->s2[i];
 	}
-	int* two = (int *)(one + 8);
-	*two = data_n->n;
-	(two)++;
-	char* three = (char *)two;
-	for (int i = 0; i < 8 ; ++i){
-		*three = data_n->s2[i];
-		three++;
-	}
+	int two = 89;//std::rand();//(int *)(one + 8);
+	memcpy(one + 8, &two, 4);
+	// *two = data_n->n;
 	delete data_n;
 	return static_cast<void*>(one);
 }
@@ -62,18 +58,11 @@ void*           serialize(void){
 Data*       deserialize(void* raw){
 	Data* data_n = new Data();
 
-	char* one = (char *)raw;
-	for (int i = 0; i < 8 ; ++i){
-		data_n->s1.push_back(*one);
-		one++;
-	}
-	int* two = (int *)one;
-	data_n->n = *two;
-	two++;
-	char * three = (char *)two;
-	for (int i = 0; i < 8 ; ++i){
-		data_n->s2.push_back(three[i]);
-	}
+	
+	data_n->s1 = std::string(reinterpret_cast<char*>(raw), 8);
+	data_n->n = *(static_cast<int*>(raw) + 2);
+	data_n->s2 = std::string(reinterpret_cast<char*>(raw) + 12, 8);
+
 	return data_n;
 }
 
