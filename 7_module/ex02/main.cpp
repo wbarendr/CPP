@@ -6,7 +6,7 @@
 /*   By: wester <wester@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/23 18:12:35 by wester        #+#    #+#                 */
-/*   Updated: 2020/09/24 10:36:58 by wester        ########   odam.nl         */
+/*   Updated: 2020/10/12 18:03:59 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,25 @@
 
 int         main(void)
 {
-    Array<int>	arr(9);
+    Array<int>	arr(3);
 
-	for (int i = 0; i < 3; ++i)
-		std::cout << arr[i] << std::endl;
+    int * a = new int();
 
-	std::cout << std::endl;
-	for (int i = 0; i < 9; ++i)
+    std::cout << *a << std::endl;
+
+	std::cout << std::endl << std::endl << "here " << arr.getSize() << std::endl;
+    try {
+	    for (unsigned int i = 0; i < arr.getSize(); ++i)
+		    std::cout << "1. " << i << " | " << arr[i] << std::endl;
+    }
+    catch (std::exception &e){
+        std::cout << e.what() << std::endl;
+    }
+	std::cout << std::endl << std::endl;
+	for (unsigned int i = 0; i < arr.getSize(); ++i)
 	{
         arr[i] = 21 * (i % 3);
-		std::cout << arr[i] << std::endl;
+		std::cout << "2. " << arr[i] << std::endl;
 	}
 	std::cout << "size: " << arr.getSize() << std::endl << std::endl;
 
@@ -42,9 +51,10 @@ int         main(void)
     str[3] = " you?";
     try {
         str[4]= "kan niet";
+        str[-3]= "kan niet";
     }
     catch (const std::out_of_range& e){
-        std::cout << "out of range" << std::endl;
+        std::cout << e.what() << std::endl;
     }
     std::cout << std::endl << str[0] << str[1] << str[2] << str[3] << std::endl;
 	std::cout << "size: " << str.getSize() << std::endl << std::endl;

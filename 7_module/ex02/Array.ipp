@@ -6,7 +6,7 @@
 /*   By: wester <wester@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/23 17:38:32 by wester        #+#    #+#                 */
-/*   Updated: 2020/09/24 10:27:47 by wester        ########   odam.nl         */
+/*   Updated: 2020/10/12 18:01:16 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,14 @@ Array<T>::Array():
 
 template<class T>
 Array<T>::Array(unsigned int n){
-    _size = n;
-    if (n)
-        _arr = new T[n];
-    else
+    if (static_cast<int>(n) <= 0){
+        _size = 0;
         _arr = NULL;
+    }
+    else { 
+        _size = n;
+        _arr = new T[n];
+    }
 }
 
 template<class T>
