@@ -6,7 +6,7 @@
 /*   By: wbarendr <wbarendr@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/16 15:09:47 by wbarendr      #+#    #+#                 */
-/*   Updated: 2020/10/09 14:55:13 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/10/12 17:14:15 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ Data*       create_data(void){
 		std::srand(time(0));
 		first = true;
 	}
-	data_n->n = 2133333; //std::rand();
+	data_n->n = std::rand();
 	for (int i = 0; i < 8; ++i){
 			data_n->s1.push_back(alpha_num[std::rand() % 61]);
 			data_n->s2.push_back(alpha_num[std::rand() % 61]);
@@ -48,9 +48,7 @@ void*           serialize(void){
 		one[i] = data_n->s1[i];
 		one[i + 12] = data_n->s2[i];
 	}
-	int two = 89;//std::rand();//(int *)(one + 8);
-	memcpy(one + 8, &two, 4);
-	// *two = data_n->n;
+	memcpy(one + 8, &data_n->n, 4);
 	delete data_n;
 	return static_cast<void*>(one);
 }
@@ -81,7 +79,7 @@ int             main(void)
 
 	raw = serialize();
 	
-	std::string str = (char *)raw;
+	std::string str = std::string(reinterpret_cast<char*>(raw), 20);
 	char *num_c = (char *)raw;
 	num_c += 8;
 	int* num = (int *)num_c;
