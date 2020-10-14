@@ -6,21 +6,16 @@
 /*   By: wester <wester@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/24 22:50:01 by wester        #+#    #+#                 */
-/*   Updated: 2020/10/01 10:49:55 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/10/14 15:15:18 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "span.hpp"
 
-Span::Span(){
-	_N = 0;
-	amount_now = 0;
-}
 
 Span::Span(unsigned int N){
 	_N = N;
 	amount_now = 0;
-	_arr = new int[N];
 }
 
 Span::Span(const Span& other){
@@ -30,9 +25,8 @@ Span::Span(const Span& other){
 Span&           Span::operator=(const Span& other){
 	_N = other._N;
 	amount_now = other.amount_now;
-	_arr = new int[_N];
 	for (unsigned int i = 0; i < amount_now; ++i){
-		_arr[i] = other._arr[i];
+		_arr.push_back(other._arr[i]);
 	}
 	return *this;
 }
@@ -42,27 +36,23 @@ Span::~Span(){}
 void			Span::addNumber(int num){
 	if (amount_now >= _N)
 		throw std::exception();
-	_arr[amount_now] = num;
+	_arr.push_back(num);
 	amount_now++;
-}
-
-void			Span:addNumber2(int* arr){
-	if (amount_now >= _N + (arr.end() - arr.begin()))
-		throw std::exception();
-	for (int i = 0; arr.begin() + i < arr.end(); ++i)	
-		_arr[amount_now] = arr[i];
-	amount_now + (arr.end() - arr.begin();
 }
 
 unsigned int	Span::shortestSpan(){
 	if (amount_now < 2)
 		throw std::exception();
-	int shortest = 2147483647;
-	int tmp;
+	unsigned int shortest = 2147483647;
+	shortest = shortest * 2 + 1;
+	unsigned int span;
+	std::vector<int> tmp(_arr.size());
+	std::copy(_arr.begin(), _arr.end(), tmp.begin());
+	std::sort(tmp.begin(), tmp.end());
 	for (unsigned int i = 1; i < amount_now; ++i){
-		tmp = abs(_arr[i - 1] - _arr[i]); 
-		if (tmp < shortest)
-			shortest = tmp;
+		span = static_cast<unsigned int>(tmp[i]) - static_cast<unsigned int>(tmp[i - 1]); 
+		if (span < shortest)
+			shortest = span;
 	}
 	return shortest;
 }
@@ -70,13 +60,8 @@ unsigned int	Span::shortestSpan(){
 unsigned int	Span::longestSpan(){
 	if (amount_now < 2)
 		throw std::exception();
-	int low = 2147483647;
-	int high = 0;
-	for (unsigned int i = 0; i < amount_now; ++i){
-		if (_arr[i] <= low)
-			low = _arr[i];
-		if (_arr[i] >= high)
-			high = _arr[i];
-	}
-	return high - low;
+	int bigspan = *std::max_element(_arr.begin(), _arr.end()) -	*std::min_element(_arr.begin(), _arr.end());
+	if (!bigspan)
+		throw std::exception();
+	return bigspan;
 }

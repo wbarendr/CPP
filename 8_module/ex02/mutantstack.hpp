@@ -6,7 +6,7 @@
 /*   By: wester <wester@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/25 10:02:48 by wester        #+#    #+#                 */
-/*   Updated: 2020/10/01 10:41:24 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/10/14 14:37:17 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <iostream>
 # include <list>
 # include <stack>
+# include <iterator>
 
 template<typename T>
 class MutantStack : public std::stack<T>
@@ -31,30 +32,21 @@ class MutantStack : public std::stack<T>
 	};
 	~MutantStack(){};
 	
-	// void    				push(T data){
-	// 	_list.push_front(data);
-	// }
-	
-	// void    				pop(void){
-	// 	_list.pop_front();
-	// }
-	
-	// T           			size(void){
-	// 	return _list.size();
-	// }
-	
-	// T						top(){
-	// 	return _list.front();
-	// }
-	
-	typedef std::list<int>::iterator iterator;
+	typedef typename std::list<T>::iterator iterator;
+	typedef typename std::list<T>::reverse_iterator reverse_iterator;
 	
 	iterator    			begin(void){
 		return _list.begin();
 	}
-
 	iterator    			end(void){
 		return _list.end();
+	}
+	
+	reverse_iterator    			rbegin(void){
+		return _list.rend();
+	}
+	reverse_iterator    			rend(void){
+		return _list.rbegin();
 	}
 };
 

@@ -6,7 +6,7 @@
 /*   By: wester <wester@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/21 12:01:29 by wester        #+#    #+#                 */
-/*   Updated: 2020/10/02 11:05:39 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/10/13 16:58:10 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,25 +34,44 @@ T       max(T& a, T& b){
     return b;
 }
 
+class
+Awesome {
+public:
+Awesome( int n ) : _n( n ) {}
+int     getInt(){return _n;};
+bool operator==( Awesome const & rhs ) { return (this->_n == rhs._n); }
+bool operator!=( Awesome const & rhs ) { return (this->_n != rhs._n); }
+bool operator>( Awesome const & rhs ) { return (this->_n > rhs._n); }
+bool operator<( Awesome const & rhs ) { return (this->_n < rhs._n); }
+bool operator>=( Awesome const & rhs ) { return (this->_n >= rhs._n); }
+bool operator<=( Awesome const & rhs ) { return (this->_n <= rhs._n); }
+private:
+int _n;
+};
+
 int main( void ) {
-    int a = 2;
-    int b = 3;
+    
+    Awesome a = 2;
+    Awesome b = 3;
+    
     ::swap( a, b );
-    std::cout << "a = " << a << ", b = " << b << std::endl;
-    std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
-    std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl;
-    std::string c = "chaine1";
-    std::string d = "chaine2";
-    ::swap(c, d);
-    std::cout << "c = " << c << ", d = " << d << std::endl;
-    std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;
-    std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
-    float x = 2.2;
-    float y = 8.8;
-    std::cout << "x: " << x << "  y: " << y << std::endl;
-    swap(x, y);
-    std::cout << "x: " << x << "  y: " << y << std::endl;
-    std::cout << "min " << min(x, y) << std::endl;
-    std::cout << "max " << max(x, y) << std::endl;
+    std::cout << "a = " << a.getInt() << ", b = " << b.getInt() << std::endl;
+    // std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
+    // std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl;
+    // std::string c = "chaine1";
+    // std::string d = "chaine2";
+    // ::swap(c, d);
+    // std::cout << "c = " << c << ", d = " << d << std::endl;
+    // std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;
+    // std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
+    // float x = 2.2;
+    // float y = 8.8;
+    // std::cout << "x: " << x << "  y: " << y << std::endl;
+    // swap(x, y);
+    // std::cout << "x: " << x << "  y: " << y << std::endl;
+    // std::cout << "min " << min(x, y) << std::endl;
+    // std::cout << "max " << max(x, y) << std::endl;
+
+    // Awesome *me = new Awesome;
     return 0;
 }

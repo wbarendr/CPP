@@ -6,7 +6,7 @@
 /*   By: wester <wester@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/24 13:20:03 by wester        #+#    #+#                 */
-/*   Updated: 2020/09/24 22:01:45 by wester        ########   odam.nl         */
+/*   Updated: 2020/10/14 12:18:48 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,13 @@
 # include <deque>
 
 template<typename T>
-typename T::iterator            easyfind(T& container, int num)
+typename T::iterator           easyfind(T& container, int num)
 {
 
-    typename T::iterator     tmp;
+    typename T::iterator   tmp;
     
     tmp = std::find(container.begin(), container.end(), num);
-    if (tmp == container.end() && *tmp != num){
+    if (tmp == container.end()){
         throw std::exception();
     }
     return tmp;

@@ -6,7 +6,7 @@
 /*   By: wester <wester@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/24 22:58:44 by wester        #+#    #+#                 */
-/*   Updated: 2020/09/24 23:37:29 by wester        ########   odam.nl         */
+/*   Updated: 2020/10/14 15:15:30 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int main(void)
     std::cout << sp.shortestSpan() << std::endl;
     std::cout << sp.longestSpan() << std::endl;
 
-    int num = 55555;
+    int num = 5555;
     Span BIG = Span(num);
     for (int i = 0; i < num; ++i){
         BIG.addNumber((i + 88) * i / 8);
@@ -31,5 +31,13 @@ int main(void)
     std::cout << BIG.shortestSpan() << std::endl;
     std::cout << BIG.longestSpan() << std::endl;
 
+
+    Span Sick = Span(2);
+    Sick.addNumber(INT_MAX);
+    Sick.addNumber(INT_MIN);
+
+    std::cout << "short: " << Sick.shortestSpan() << std::endl;
+    std::cout << "long: " << Sick.longestSpan() << std::endl;
+    
     return  0;    
 }

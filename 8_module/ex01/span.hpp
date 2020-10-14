@@ -6,7 +6,7 @@
 /*   By: wester <wester@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/24 22:50:02 by wester        #+#    #+#                 */
-/*   Updated: 2020/10/01 10:46:19 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/10/14 14:20:28 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,18 @@
 # define _SPAN_HPP_
 
 # include <iostream>
+# include <stdexcept>
+# include <algorithm>
+# include <climits>
+# include <vector>
 
 class Span
 {
-	int*			_arr;
-	unsigned int 	_N;
-	unsigned int	amount_now;
-  public:
+	std::vector<int>			_arr;
+	unsigned int 				_N;
+	unsigned int				amount_now;
 	Span();
+  public:
 	Span(unsigned int N);
 	Span(const Span& other);
 	Span&			operator=(const Span& other);
