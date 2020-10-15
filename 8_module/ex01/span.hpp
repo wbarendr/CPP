@@ -6,7 +6,7 @@
 /*   By: wester <wester@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/24 22:50:02 by wester        #+#    #+#                 */
-/*   Updated: 2020/10/14 14:20:28 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/10/15 15:58:41 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <algorithm>
 # include <climits>
 # include <vector>
+# include <array>
 
 class Span
 {
@@ -30,7 +31,7 @@ class Span
 	Span(const Span& other);
 	Span&			operator=(const Span& other);
 	~Span();
-	void			addNumber2(int* arr);
+	void			addNumber2(int begin, int end);
 	void        	addNumber(int num);
 	unsigned int	shortestSpan();
 	unsigned int	longestSpan();

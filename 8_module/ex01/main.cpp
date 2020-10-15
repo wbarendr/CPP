@@ -6,7 +6,7 @@
 /*   By: wester <wester@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/24 22:58:44 by wester        #+#    #+#                 */
-/*   Updated: 2020/10/14 15:15:30 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/10/15 16:00:12 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,9 @@ int main(void)
     std::cout << "short: " << Sick.shortestSpan() << std::endl;
     std::cout << "long: " << Sick.longestSpan() << std::endl;
     
+    Span mucho = Span(42356);
+    mucho.addNumber2(1, 800000);
+    std::cout << "short: " << mucho.shortestSpan() << std::endl;
+    std::cout << "long: " << mucho.longestSpan() << std::endl;
     return  0;    
 }

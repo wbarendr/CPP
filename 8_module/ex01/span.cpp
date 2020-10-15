@@ -6,7 +6,7 @@
 /*   By: wester <wester@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/24 22:50:01 by wester        #+#    #+#                 */
-/*   Updated: 2020/10/14 15:15:18 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/10/15 15:59:28 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,17 @@ void			Span::addNumber(int num){
 		throw std::exception();
 	_arr.push_back(num);
 	amount_now++;
+}
+
+void			Span::addNumber2(int begin, int end)
+{
+	// std::cout << sizeof(arr) << "   ok . " << std::endl;
+	for (; begin < end && amount_now < _N; ++begin){
+		_arr.push_back(begin * 23);
+		amount_now++;
+	}
+	std::cout << amount_now << "  amount" << std::endl;
+	
 }
 
 unsigned int	Span::shortestSpan(){
