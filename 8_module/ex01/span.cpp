@@ -6,7 +6,7 @@
 /*   By: wester <wester@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/24 22:50:01 by wester        #+#    #+#                 */
-/*   Updated: 2020/10/15 15:59:28 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/10/16 11:33:18 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,28 +40,16 @@ void			Span::addNumber(int num){
 	amount_now++;
 }
 
-void			Span::addNumber2(int begin, int end)
-{
-	// std::cout << sizeof(arr) << "   ok . " << std::endl;
-	for (; begin < end && amount_now < _N; ++begin){
-		_arr.push_back(begin * 23);
-		amount_now++;
-	}
-	std::cout << amount_now << "  amount" << std::endl;
-	
-}
-
 unsigned int	Span::shortestSpan(){
 	if (amount_now < 2)
 		throw std::exception();
-	unsigned int shortest = 2147483647;
-	shortest = shortest * 2 + 1;
+	long shortest = 4294967295;
 	unsigned int span;
 	std::vector<int> tmp(_arr.size());
 	std::copy(_arr.begin(), _arr.end(), tmp.begin());
 	std::sort(tmp.begin(), tmp.end());
 	for (unsigned int i = 1; i < amount_now; ++i){
-		span = static_cast<unsigned int>(tmp[i]) - static_cast<unsigned int>(tmp[i - 1]); 
+		span = static_cast<long>(tmp[i]) - static_cast<long>(tmp[i - 1]);
 		if (span < shortest)
 			shortest = span;
 	}

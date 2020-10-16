@@ -6,7 +6,7 @@
 /*   By: wester <wester@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/24 22:58:44 by wester        #+#    #+#                 */
-/*   Updated: 2020/10/15 16:00:12 by wbarendr      ########   odam.nl         */
+/*   Updated: 2020/10/16 11:40:50 by wbarendr      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,25 +23,43 @@ int main(void)
     std::cout << sp.shortestSpan() << std::endl;
     std::cout << sp.longestSpan() << std::endl;
 
-    int num = 5555;
+    int num = 555;
     Span BIG = Span(num);
     for (int i = 0; i < num; ++i){
-        BIG.addNumber((i + 88) * i / 8);
+        BIG.addNumber(i * 8 + 88);
     }
     std::cout << BIG.shortestSpan() << std::endl;
     std::cout << BIG.longestSpan() << std::endl;
 
 
     Span Sick = Span(2);
-    Sick.addNumber(INT_MAX);
-    Sick.addNumber(INT_MIN);
+    try {
+        // Sick.addNumber(0);
+        Sick.addNumber(INT_MAX);
+        Sick.addNumber(INT_MIN);
+    }
+    catch (const std::exception e){
+        std::cout << "didn't work with this span " << std::endl;
+    }
 
     std::cout << "short: " << Sick.shortestSpan() << std::endl;
     std::cout << "long: " << Sick.longestSpan() << std::endl;
     
-    Span mucho = Span(42356);
-    mucho.addNumber2(1, 800000);
-    std::cout << "short: " << mucho.shortestSpan() << std::endl;
-    std::cout << "long: " << mucho.longestSpan() << std::endl;
+    std::vector<int> Mucho;
+
+    for (int i = 0; i < 25789; ++i){
+        Mucho.push_back(i * 7);
+    }
+    Span grande = Span(12789);
+    grande.addNumber(Mucho.begin(), Mucho.end());
+    grande.addNumber(Mucho.begin(), Mucho.end());
+
+    try {
+        std::cout << "short: " << grande.shortestSpan() << std::endl;
+        std::cout << "long: " << grande.longestSpan() << std::endl;
+    }
+    catch (const std::exception e){
+        std::cout << "didn't work with this span " << std::endl;
+    }
     return  0;    
 }
